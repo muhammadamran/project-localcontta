@@ -79,6 +79,9 @@ if (isset($_POST["PASSWORD"])) {
 $user = $db->query("SELECT * FROM view_privileges WHERE USERNAME='" . $USERNAME_ . "' AND PASSWORD='" . md5($PASSWORD_) . "'", 0);
 $result = $user->fetch_assoc();
 
+var_dump($result);
+exit;
+
 if ($result != NULL) {
     $ID_USERS = $result['ID_USERS'];
     $BARCODE_U = $result['BARCODE_U'];
@@ -199,6 +202,9 @@ if ($result != NULL) {
         ];
 
         $loginarea = f_login($data);
+
+        var_dump($loginarea);
+        exit;
 
         if ($loginarea == 2) {
             header("Location: ./index.php?notif_login_successfully");
