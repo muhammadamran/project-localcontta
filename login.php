@@ -27,7 +27,7 @@ include "include/alert.php";
                     <span class="focus-input100" data-placeholder="&#xf207;"></span>
                 </div>
                 <div class="wrap-input100 validate-input" data-validate="Enter password">
-                    <input class="input100" type="password" id="PASSWORD" name="password" placeholder="Password">
+                    <input class="input100" type="password" id="password" name="PASSWORD" placeholder="Password">
                     <span class="focus-input100" data-placeholder="&#xf191;"></span>
                 </div>
                 <div class="contact100-form-checkbox">

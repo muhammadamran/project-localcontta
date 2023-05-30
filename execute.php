@@ -6,7 +6,6 @@ function f_login($data)
 {
     if ($data['PASSWORD_HASH'] == $data['PASSWORD']) {
         $_SESSION['ID_USERS'] = $data['ID_USERS'];
-        $_SESSION['BARCODE_U'] = $data['BARCODE_U'];
         $_SESSION['USERNAME'] = $data['USERNAME'];
         $_SESSION['PASSWORD'] = $data['PASSWORD'];
         $_SESSION['ROLE'] = $data['ROLE'];
@@ -21,7 +20,6 @@ function f_login($data)
         $_SESSION['DESC_ACCESS'] = $data['DESC_ACCESS'];
         $_SESSION['MODULES'] = $data['MODULES'];
         $_SESSION['ID_EMPLOYEE'] = $data['ID_EMPLOYEE'];
-        $_SESSION['BARCODE_E'] = $data['BARCODE_E'];
         $_SESSION['NIK'] = $data['NIK'];
         $_SESSION['NPWP'] = $data['NPWP'];
         $_SESSION['FIRST_NAME'] = $data['FIRST_NAME'];
@@ -76,74 +74,69 @@ if (isset($_POST["PASSWORD"])) {
     $PASSWORD_ = "";
 }
 
-$user = $db->query("SELECT * FROM view_privileges WHERE USERNAME='" . $USERNAME_ . "' AND PASSWORD='" . md5($PASSWORD_) . "'", 0);
-$result = $user->fetch_assoc();
+$DataUser = $db->query("SELECT * FROM view_privileges WHERE USERNAME='" . $USERNAME_ . "' AND PASSWORD='" . md5($PASSWORD_) . "'", 0);
+$CheckResult = $DataUser->fetch_assoc();
 
-var_dump($result);
-exit;
-
-if ($result != NULL) {
-    $ID_USERS = $result['ID_USERS'];
-    $BARCODE_U = $result['BARCODE_U'];
-    $USERNAME = $result['USERNAME'];
-    $PASSWORD = $result['PASSWORD'];
-    $ROLE = $result['ROLE'];
-    $STATUS = $result['STATUS'];
-    $CREATED_DATE = $result['CREATED_DATE'];
-    $BY = $result['BY'];
-    $THEME_BTN = $result['THEME_BTN'];
-    $THEME_BG = $result['THEME_BG'];
-    $LEVEL = $result['LEVEL'];
-    $ID_ROLE = $result['ID_ROLE'];
-    $ACCESS = $result['ACCESS'];
-    $DESC_ACCESS = $result['DESC_ACCESS'];
-    $MODULES = $result['MODULES'];
-    $ID_EMPLOYEE = $result['ID_EMPLOYEE'];
-    $BARCODE_E = $result['BARCODE_E'];
-    $NIK = $result['NIK'];
-    $NPWP = $result['NPWP'];
-    $FIRST_NAME = $result['FIRST_NAME'];
-    $MIDDLE_NAME = $result['MIDDLE_NAME'];
-    $LAST_NAME = $result['LAST_NAME'];
-    $EMAIL = $result['EMAIL'];
-    $HANDPHONE = $result['HANDPHONE'];
-    $PROVINCE_E_D = $result['PROVINCE_E_D'];
-    $CITY_E_D = $result['CITY_E_D'];
-    $DISTRICS_E_D = $result['DISTRICS_E_D'];
-    $REGENCIES_E_D = $result['REGENCIES_E_D'];
-    $VILLAGES_E_D = $result['VILLAGES_E_D'];
-    $RT_E_D = $result['RT_E_D'];
-    $RW_E_D = $result['RW_E_D'];
-    $ADDRESS_E_D = $result['ADDRESS_E_D'];
-    $POSTAL_CODE_E_D = $result['POSTAL_CODE_E_D'];
-    $PROVINCE_E_S = $result['PROVINCE_E_S'];
-    $CITY_E_S = $result['CITY_E_S'];
-    $DISTRICS_E_S = $result['DISTRICS_E_S'];
-    $REGENCIES_E_S = $result['REGENCIES_E_S'];
-    $VILLAGES_E_S = $result['VILLAGES_E_S'];
-    $RT_E_S = $result['RT_E_S'];
-    $RW_E_S = $result['RW_E_S'];
-    $ADDRESS_E_S = $result['ADDRESS_E_S'];
-    $POSTAL_CODE_E_S = $result['POSTAL_CODE_E_S'];
-    $RELIGION = $result['RELIGION'];
-    $BLOOD = $result['BLOOD'];
-    $MARITAL_STATUS = $result['MARITAL_STATUS'];
-    $PLACE_BIRTH = $result['PLACE_BIRTH'];
-    $DATE_BIRTH = $result['DATE_BIRTH'];
-    $AGE = $result['AGE'];
-    $GENDER = $result['GENDER'];
-    $STATUS_EMPLOYEE = $result['STATUS_EMPLOYEE'];
-    $TYPE_EMPLOYEE = $result['TYPE_EMPLOYEE'];
-    $ID = $result['ID'];
-    $COMPANY_CODE = $result['COMPANY_CODE'];
-    $COMPANY_NAME = $result['COMPANY_NAME'];
-    $COMPANY_TOKEN = $result['COMPANY_TOKEN'];
-    $COMPANY_STATUS = $result['COMPANY_STATUS'];
+if ($CheckResult != NULL) {
+    $ID_USERS = $CheckResult['ID_USERS'];
+    $COMPANY_CODE_USERS = $CheckResult['COMPANY_CODE_USERS'];
+    $USERNAME = $CheckResult['USERNAME'];
+    $PASSWORD = $CheckResult['PASSWORD'];
+    $ROLE = $CheckResult['ROLE'];
+    $STATUS = $CheckResult['STATUS'];
+    $CREATED_DATE = $CheckResult['CREATED_DATE'];
+    $BY = $CheckResult['BY'];
+    $THEME_BTN = $CheckResult['THEME_BTN'];
+    $THEME_BG = $CheckResult['THEME_BG'];
+    $LEVEL = $CheckResult['LEVEL'];
+    $ID_ROLE = $CheckResult['ID_ROLE'];
+    $ACCESS = $CheckResult['ACCESS'];
+    $DESC_ACCESS = $CheckResult['DESC_ACCESS'];
+    $MODULES = $CheckResult['MODULES'];
+    $ID_EMPLOYEE = $CheckResult['ID_EMPLOYEE'];
+    $NIK = $CheckResult['NIK'];
+    $NPWP = $CheckResult['NPWP'];
+    $FIRST_NAME = $CheckResult['FIRST_NAME'];
+    $MIDDLE_NAME = $CheckResult['MIDDLE_NAME'];
+    $LAST_NAME = $CheckResult['LAST_NAME'];
+    $EMAIL = $CheckResult['EMAIL'];
+    $HANDPHONE = $CheckResult['HANDPHONE'];
+    $PROVINCE_E_D = $CheckResult['PROVINCE_E_D'];
+    $CITY_E_D = $CheckResult['CITY_E_D'];
+    $DISTRICS_E_D = $CheckResult['DISTRICS_E_D'];
+    $REGENCIES_E_D = $CheckResult['REGENCIES_E_D'];
+    $VILLAGES_E_D = $CheckResult['VILLAGES_E_D'];
+    $RT_E_D = $CheckResult['RT_E_D'];
+    $RW_E_D = $CheckResult['RW_E_D'];
+    $ADDRESS_E_D = $CheckResult['ADDRESS_E_D'];
+    $POSTAL_CODE_E_D = $CheckResult['POSTAL_CODE_E_D'];
+    $PROVINCE_E_S = $CheckResult['PROVINCE_E_S'];
+    $CITY_E_S = $CheckResult['CITY_E_S'];
+    $DISTRICS_E_S = $CheckResult['DISTRICS_E_S'];
+    $REGENCIES_E_S = $CheckResult['REGENCIES_E_S'];
+    $VILLAGES_E_S = $CheckResult['VILLAGES_E_S'];
+    $RT_E_S = $CheckResult['RT_E_S'];
+    $RW_E_S = $CheckResult['RW_E_S'];
+    $ADDRESS_E_S = $CheckResult['ADDRESS_E_S'];
+    $POSTAL_CODE_E_S = $CheckResult['POSTAL_CODE_E_S'];
+    $RELIGION = $CheckResult['RELIGION'];
+    $BLOOD = $CheckResult['BLOOD'];
+    $MARITAL_STATUS = $CheckResult['MARITAL_STATUS'];
+    $PLACE_BIRTH = $CheckResult['PLACE_BIRTH'];
+    $DATE_BIRTH = $CheckResult['DATE_BIRTH'];
+    $AGE = $CheckResult['AGE'];
+    $GENDER = $CheckResult['GENDER'];
+    $STATUS_EMPLOYEE = $CheckResult['STATUS_EMPLOYEE'];
+    $TYPE_EMPLOYEE = $CheckResult['TYPE_EMPLOYEE'];
+    $ID = $CheckResult['ID'];
+    $COMPANY_CODE = $CheckResult['COMPANY_CODE'];
+    $COMPANY_NAME = $CheckResult['COMPANY_NAME'];
+    $COMPANY_TOKEN = $CheckResult['COMPANY_TOKEN'];
+    $COMPANY_STATUS = $CheckResult['COMPANY_STATUS'];
 
     if ($ROLE == 'Administrator') {
         $data = [
             'ID_USERS' => $ID_USERS,
-            'BARCODE_U' => $BARCODE_U,
             'USERNAME' => $USERNAME,
             'PASSWORD_HASH' => md5($PASSWORD_),
             'PASSWORD' => $PASSWORD,
@@ -159,7 +152,6 @@ if ($result != NULL) {
             'DESC_ACCESS' => $DESC_ACCESS,
             'MODULES' => $MODULES,
             'ID_EMPLOYEE' => $ID_EMPLOYEE,
-            'BARCODE_E' => $BARCODE_E,
             'NIK' => $NIK,
             'NPWP' => $NPWP,
             'FIRST_NAME' => $FIRST_NAME,
@@ -202,9 +194,6 @@ if ($result != NULL) {
         ];
 
         $loginarea = f_login($data);
-
-        var_dump($loginarea);
-        exit;
 
         if ($loginarea == 2) {
             header("Location: ./index.php?notif_login_successfully");
