@@ -1,19 +1,17 @@
 <?php
-include "include/flogin.php";
-include "include/lhead.php";
+include "include/login/head.php";
+include "include/alert.php";
 ?>
 <div class="limiter">
     <div class="container-login100" style="background-image: url('assets/app/images/3.jpeg');">
         <div class="wrap-login100">
-            <form class="login100-form validate-form" role="form" method="post" action="">
+            <form class="login100-form validate-form" role="form" method="post" action="execute.php">
                 <div class="login-logo">
                     <center>
                         <img src="assets/app/logo/logo-white.png" style="width: 345px;">
-                        <span class="login100-form-title p-b-5 p-t-5">
-                            <!-- LocalContta -->
-                        </span>
                     </center>
                 </div>
+                <br>
                 <hr>
                 <div style="display: flex;justify-content: center;">
                     <font style="font-size: 35px;font-weight:700;color:#fff">Localcontta</font>
@@ -23,22 +21,13 @@ include "include/lhead.php";
                         Please Log In to start your session.
                     </font>
                 </div>
-                <hr>
-                <!-- <div class="menu__divider"></div> -->
-                <!-- <?php if ($alertWrong == 'YES') { ?>
-                    <div class="p-b-20">
-                        <div class="alert-danger ">
-                          <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-                          <strong>Danger!</strong> Indicates a dangerous or potentially negative action.
-                        </div>
-                    </div>
-                    <?php } ?> -->
+                <hr><br>
                 <div class="wrap-input100 validate-input" data-validate="Enter username">
-                    <input class="input100" type="text" name="user_name" placeholder="Username">
+                    <input class="input100" type="email" name="USERNAME" placeholder="Username">
                     <span class="focus-input100" data-placeholder="&#xf207;"></span>
                 </div>
                 <div class="wrap-input100 validate-input" data-validate="Enter password">
-                    <input class="input100" type="password" id="password" name="password" placeholder="Password">
+                    <input class="input100" type="password" id="PASSWORD" name="password" placeholder="Password">
                     <span class="focus-input100" data-placeholder="&#xf191;"></span>
                 </div>
                 <div class="contact100-form-checkbox">
@@ -63,5 +52,5 @@ include "include/lhead.php";
     </div>
 </div>
 <?php
-include "include/lfooter.php";
+include "include/login/footer.php";
 ?>
