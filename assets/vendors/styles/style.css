@@ -1431,7 +1431,7 @@ table.dataTable.dtr-inline.collapsed
 }
 .header-dark .header,
 .header-dark .header-left .header-search {
-  background: #142127;
+  background: #002766;
 }
 .header-dark .header .user-info-dropdown .dropdown-toggle,
 .header-dark .header .user-info-dropdown .dropdown-toggle .user-name,
@@ -1556,7 +1556,7 @@ table.dataTable.dtr-inline.collapsed
   width: 280px;
   height: 100vh;
   z-index: 1000;
-  background: #142127;
+  background: #002766;
 }
 .left-side-bar .mCS-dark-2.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
   background: #ecf0f4;
@@ -1755,7 +1755,7 @@ table.dataTable.dtr-inline.collapsed
   background-color: rgba(0, 0, 0, 0.4);
 }
 .sidebar-light .sidebar-menu > ul > li > .dropdown-toggle.active {
-  background-color: #142127;
+  background-color: #002766;
   color: #fff;
 }
 .sidebar-light .sidebar-menu .dropdown-toggle:hover .micon,
@@ -1793,7 +1793,7 @@ table.dataTable.dtr-inline.collapsed
 .sidebar-light .sidebar-menu .submenu li a.active,
 .sidebar-light .sidebar-menu .submenu li a:hover {
   color: #fff;
-  background-color: #142127;
+  background-color: #002766;
 }
 .sidebar-light .menu-block .mCS-dark-2.mCSB_scrollTools .mCSB_draggerRail {
   background-color: #0e132b;
