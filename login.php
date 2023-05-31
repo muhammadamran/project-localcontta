@@ -22,13 +22,13 @@ include "include/alert.php";
                     </font>
                 </div>
                 <hr><br>
-                <div class="wrap-input100 validate-input" data-validate="Enter username">
-                    <input class="input100" type="email" name="USERNAME" placeholder="Username">
-                    <span class="focus-input100" data-placeholder="&#xf207;"></span>
+                <div class="wrap-input100 validate-input" data-validate="Enter Email">
+                    <input class="input100" type="email" name="USERNAME" placeholder="Email">
+                    <span class="focus-input100" data-placeholder="&#xf159;"></span>
                 </div>
                 <div class="wrap-input100 validate-input" data-validate="Enter password">
                     <input class="input100" type="password" id="password" name="PASSWORD" placeholder="Password">
-                    <span class="focus-input100" data-placeholder="&#xf191;"></span>
+                    <span class="focus-input100" data-placeholder="&#xf190;"></span>
                 </div>
                 <div class="contact100-form-checkbox">
                     <input class="input-checkbox100" id="ckb1" type="checkbox" onclick="myFunction()" name="remember-me">

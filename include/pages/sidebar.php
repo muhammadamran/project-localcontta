@@ -9,7 +9,7 @@
         </div>
     </div>
     <div class="menu-block customscroll">
-        <div class="sidebar-menu">
+        <div class=" sidebar-menu">
             <ul id="accordion-menu">
                 <li class="dropdown">
                     <a href="javascript:;" class="dropdown-toggle">

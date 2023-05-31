@@ -15,10 +15,6 @@
     <link rel="stylesheet" type="text/css" href="assets/src/plugins/datatables/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" type="text/css" href="assets/src/plugins/datatables/css/responsive.bootstrap4.min.css">
     <link rel="stylesheet" type="text/css" href="assets/vendors/styles/style.css">
-    <script src="assets/sweet/sweetalert2.all.js"></script>
-    <script src="assets/sweet/sweetalert2.all.min.js"></script>
-    <script src="assets/sweet/sweetalert2.js"></script>
-    <script src="assets/sweet/sweetalert2.min.js"></script>
 </head>
 
 <body>
