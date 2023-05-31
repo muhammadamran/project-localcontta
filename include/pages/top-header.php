@@ -6,7 +6,14 @@
             <div class="vl-and-font">
                 <div class="vl"></div>
                 <div class="j-font">
-                    <font class="font-apps">Localcontta</font>
+                    <div class="apps-company">
+                        <div>
+                            <font class="font-apps">Localcontta</font>
+                        </div>
+                        <div style="margin-top: -5px;">
+                            <font class="font-company">PT. Kuehne Nagel Indonesia</font>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -87,12 +94,9 @@
                     <a class="dropdown-item" href="profile.html"><i class="dw dw-user1"></i> Profile</a>
                     <a class="dropdown-item" href="profile.html"><i class="dw dw-settings2"></i> Setting</a>
                     <a class="dropdown-item" href="faq.html"><i class="dw dw-help"></i> Help</a>
-                    <a class="dropdown-item" href="login.html"><i class="dw dw-logout"></i> Log Out</a>
+                    <a class="dropdown-item" href="logout.php"><i class="dw dw-logout"></i> Log Out</a>
                 </div>
             </div>
-        </div>
-        <div class="github-link">
-            <a href="https://github.com/dropways/deskapp" target="_blank"><img src="assets/vendors/images/github.svg" alt=""></a>
         </div>
     </div>
 </div>

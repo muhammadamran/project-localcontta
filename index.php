@@ -8,8 +8,13 @@ $get_api = explode('/', $url);
 if ($get_api[1] == 'api') {
     include $get_api[1] . '/' . $get_api[2] . '.php';
 } else {
+
+    // FOR TITLE
+    $nameTitle = " - Localcontta | Kuehne + Nagel Indonesia";
+    // END FOR TITLE
+
     if (!empty($_SESSION['ROLE'])) {
-        include "include/alert.php";
+
         include "include/pages/head.php";
         include "include/pages/top-header.php";
         include "include/pages/panel.php";
@@ -26,6 +31,7 @@ if ($get_api[1] == 'api') {
         }
 
         include "include/pages/footer.php";
+        include "include/alert.php";
     } else {
         include "login.php";
     }

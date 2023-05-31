@@ -13,187 +13,256 @@
     <div class="menu-block customscroll">
         <div class=" sidebar-menu">
             <ul id="accordion-menu">
-                <li class="dropdown">
-                    <a href="javascript:;" class="dropdown-toggle">
-                        <span class="micon dw dw-house-1"></span><span class="mtext">Home</span>
-                    </a>
-                    <ul class="submenu">
-                        <li><a href="index.html">Dashboard style 1</a></li>
-                        <li><a href="index2.html">Dashboard style 2</a></li>
-                        <li><a href="index3.html">Dashboard style 3</a></li>
-                    </ul>
+                <li class="list-title">
+                    <!--                                              GENERAL SECTION                                                       -->
+                    <div class="sidebar-small-cap">GENERAL SECTION</div>
                 </li>
-                <li class="dropdown">
-                    <a href="javascript:;" class="dropdown-toggle">
-                        <span class="micon dw dw-edit2"></span><span class="mtext">Forms</span>
+                <!-- Dashboard -->
+                <li>
+                    <a href="index.php" class="dropdown-toggle no-arrow">
+                        <span class="micon dw dw-analytics-4" id="icon-sidebar"></span><span class="mtext">Dashboard</span>
                     </a>
-                    <ul class="submenu">
-                        <li><a href="form-basic.html">Form Basic</a></li>
-                        <li><a href="advanced-components.html">Advanced Components</a></li>
-                        <li><a href="form-wizard.html">Form Wizard</a></li>
-                        <li><a href="html5-editor.html">HTML5 Editor</a></li>
-                        <li><a href="form-pickers.html">Form Pickers</a></li>
-                        <li><a href="image-cropper.html">Image Cropper</a></li>
-                        <li><a href="image-dropzone.html">Image Dropzone</a></li>
-                    </ul>
                 </li>
-                <li class="dropdown">
-                    <a href="javascript:;" class="dropdown-toggle">
-                        <span class="micon dw dw-library"></span><span class="mtext">Tables</span>
-                    </a>
-                    <ul class="submenu">
-                        <li><a href="basic-table.html">Basic Tables</a></li>
-                        <li><a href="datatable.html">DataTables</a></li>
-                    </ul>
-                </li>
+                <!-- Search -->
                 <li>
                     <a href="calendar.html" class="dropdown-toggle no-arrow">
-                        <span class="micon dw dw-calendar1"></span><span class="mtext">Calendar</span>
+                        <span class="micon dw dw-search" id="icon-sidebar"></span><span class="mtext">Search</span>
                     </a>
                 </li>
-                <li class="dropdown">
-                    <a href="javascript:;" class="dropdown-toggle">
-                        <span class="micon dw dw-apartment"></span><span class="mtext"> UI Elements </span>
-                    </a>
-                    <ul class="submenu">
-                        <li><a href="ui-buttons.html">Buttons</a></li>
-                        <li><a href="ui-cards.html">Cards</a></li>
-                        <li><a href="ui-cards-hover.html">Cards Hover</a></li>
-                        <li><a href="ui-modals.html">Modals</a></li>
-                        <li><a href="ui-tabs.html">Tabs</a></li>
-                        <li><a href="ui-tooltip-popover.html">Tooltip &amp; Popover</a></li>
-                        <li><a href="ui-sweet-alert.html">Sweet Alert</a></li>
-                        <li><a href="ui-notification.html">Notification</a></li>
-                        <li><a href="ui-timeline.html">Timeline</a></li>
-                        <li><a href="ui-progressbar.html">Progressbar</a></li>
-                        <li><a href="ui-typography.html">Typography</a></li>
-                        <li><a href="ui-list-group.html">List group</a></li>
-                        <li><a href="ui-range-slider.html">Range slider</a></li>
-                        <li><a href="ui-carousel.html">Carousel</a></li>
-                    </ul>
+                <!--                                              APPLICATION SECTION                                                       -->
+                <li class="list-title">
+                    <div class="sidebar-small-cap">APPLICATION SECTION</div>
                 </li>
+                <!-- Export -->
                 <li class="dropdown">
                     <a href="javascript:;" class="dropdown-toggle">
-                        <span class="micon dw dw-paint-brush"></span><span class="mtext">Icons</span>
+                        <span class="micon icon-copy ti-upload" id="icon-sidebar"></span><span class="mtext">Export</span>
                     </a>
                     <ul class="submenu">
-                        <li><a href="font-awesome.html">FontAwesome Icons</a></li>
-                        <li><a href="foundation.html">Foundation Icons</a></li>
-                        <li><a href="ionicons.html">Ionicons Icons</a></li>
-                        <li><a href="themify.html">Themify Icons</a></li>
-                        <li><a href="custom-icon.html">Custom Icons</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="javascript:;" class="dropdown-toggle">
-                        <span class="micon dw dw-analytics-21"></span><span class="mtext">Charts</span>
-                    </a>
-                    <ul class="submenu">
-                        <li><a href="highchart.html">Highchart</a></li>
-                        <li><a href="knob-chart.html">jQuery Knob</a></li>
-                        <li><a href="jvectormap.html">jvectormap</a></li>
-                        <li><a href="apexcharts.html">Apexcharts</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="javascript:;" class="dropdown-toggle">
-                        <span class="micon dw dw-right-arrow1"></span><span class="mtext">Additional Pages</span>
-                    </a>
-                    <ul class="submenu">
-                        <li><a href="video-player.html">Video Player</a></li>
-                        <li><a href="login.html">Login</a></li>
-                        <li><a href="forgot-password.html">Forgot Password</a></li>
-                        <li><a href="reset-password.html">Reset Password</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="javascript:;" class="dropdown-toggle">
-                        <span class="micon dw dw-browser2"></span><span class="mtext">Error Pages</span>
-                    </a>
-                    <ul class="submenu">
-                        <li><a href="400.html">400</a></li>
-                        <li><a href="403.html">403</a></li>
-                        <li><a href="404.html">404</a></li>
-                        <li><a href="500.html">500</a></li>
-                        <li><a href="503.html">503</a></li>
-                    </ul>
-                </li>
-
-                <li class="dropdown">
-                    <a href="javascript:;" class="dropdown-toggle">
-                        <span class="micon dw dw-copy"></span><span class="mtext">Extra Pages</span>
-                    </a>
-                    <ul class="submenu">
-                        <li><a href="blank.html">Blank</a></li>
-                        <li><a href="contact-directory.html">Contact Directory</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="blog-detail.html">Blog Detail</a></li>
-                        <li><a href="product.html">Product</a></li>
-                        <li><a href="product-detail.html">Product Detail</a></li>
-                        <li><a href="faq.html">FAQ</a></li>
-                        <li><a href="profile.html">Profile</a></li>
-                        <li><a href="gallery.html">Gallery</a></li>
-                        <li><a href="pricing-table.html">Pricing Tables</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="javascript:;" class="dropdown-toggle">
-                        <span class="micon dw dw-list3"></span><span class="mtext">Multi Level Menu</span>
-                    </a>
-                    <ul class="submenu">
-                        <li><a href="javascript:;">Level 1</a></li>
-                        <li><a href="javascript:;">Level 1</a></li>
-                        <li><a href="javascript:;">Level 1</a></li>
                         <li class="dropdown">
                             <a href="javascript:;" class="dropdown-toggle">
-                                <span class="micon fa fa-plug"></span><span class="mtext">Level 2</span>
+                                <span class="micon icon-copy dw dw-flight-1"></span><span class="mtext">Airfreight</span>
                             </a>
                             <ul class="submenu child">
-                                <li><a href="javascript:;">Level 2</a></li>
-                                <li><a href="javascript:;">Level 2</a></li>
+                                <li><a href="javascript:;">Export Master Airfreight</a></li>
+                                <li><a href="javascript:;">1) Custom Arrangement</a></li>
+                                <li><a href="javascript:;">2) Ship. Monitoring</a></li>
+                                <li><a href="javascript:;">*) E-File</a></li>
                             </ul>
                         </li>
-                        <li><a href="javascript:;">Level 1</a></li>
-                        <li><a href="javascript:;">Level 1</a></li>
-                        <li><a href="javascript:;">Level 1</a></li>
+                        <li class="dropdown">
+                            <a href="javascript:;" class="dropdown-toggle">
+                                <span class="micon icon-copy dw dw-ship"></span><span class="mtext">Seafreight</span>
+                            </a>
+                            <ul class="submenu child">
+                                <li><a href="javascript:;">Export Master Seafreight</a></li>
+                                <li><a href="javascript:;">1) Custom Arrangement</a></li>
+                                <li><a href="javascript:;">2) Ship. Monitoring</a></li>
+                                <li><a href="javascript:;">3) COO Management</a></li>
+                                <li><a href="javascript:;">4) Billing</a></li>
+                                <li><a href="javascript:;">5) Set Trucker</a></li>
+                                <li><a href="javascript:;">*) E-File</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </li>
-                <li>
-                    <a href="sitemap.html" class="dropdown-toggle no-arrow">
-                        <span class="micon dw dw-diagram"></span><span class="mtext">Sitemap</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="chat.html" class="dropdown-toggle no-arrow">
-                        <span class="micon dw dw-chat3"></span><span class="mtext">Chat</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="invoice.html" class="dropdown-toggle no-arrow">
-                        <span class="micon dw dw-invoice"></span><span class="mtext">Invoice</span>
-                    </a>
-                </li>
-                <li>
-                    <div class="dropdown-divider"></div>
-                </li>
-                <li>
-                    <div class="sidebar-small-cap">Extra</div>
-                </li>
-                <li>
+                <!-- Import -->
+                <li class="dropdown">
                     <a href="javascript:;" class="dropdown-toggle">
-                        <span class="micon dw dw-edit-2"></span><span class="mtext">Documentation</span>
+                        <span class="micon icon-copy ti-download" id="icon-sidebar"></span><span class="mtext">Import</span>
                     </a>
                     <ul class="submenu">
-                        <li><a href="introduction.html">Introduction</a></li>
-                        <li><a href="getting-started.html">Getting Started</a></li>
-                        <li><a href="color-settings.html">Color Settings</a></li>
-                        <li><a href="third-party-plugins.html">Third Party Plugins</a></li>
+                        <li class="dropdown">
+                            <a href="javascript:;" class="dropdown-toggle">
+                                <span class="micon icon-copy dw dw-flight-1"></span><span class="mtext">Airfreight</span>
+                            </a>
+                            <ul class="submenu child">
+                                <li><a href="javascript:;">Import Master Airfreight</a></li>
+                                <li><a href="javascript:;">1) Pre-Clearance</a></li>
+                                <li><a href="javascript:;">2) Clearance</a></li>
+                                <li><a href="javascript:;">3) Post-Clearance</a></li>
+                                <li><a href="javascript:;">4) Set Trucking</a></li>
+                                <li><a href="javascript:;">*) Cost Sheet</a></li>
+                                <li><a href="javascript:;">*) E-File</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="javascript:;" class="dropdown-toggle">
+                                <span class="micon icon-copy dw dw-ship"></span><span class="mtext">Seafreight</span>
+                            </a>
+                            <ul class="submenu child">
+                                <li><a href="javascript:;">Import Master Seafreight</a></li>
+                                <li><a href="javascript:;">1) Pre-Clearance</a></li>
+                                <li><a href="javascript:;">2) Clearance</a></li>
+                                <li><a href="javascript:;">3) Post-Clearance</a></li>
+                                <li><a href="javascript:;">4) Set Trucking</a></li>
+                                <li><a href="javascript:;">*) Cost Sheet</a></li>
+                                <li><a href="javascript:;">*) E-File</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </li>
+                <!-- Truck Monitoring -->
+                <li class="dropdown">
+                    <a href="javascript:;" class="dropdown-toggle">
+                        <span class="micon icon-copy dw dw-delivery-truck-2" id="icon-sidebar"></span><span class="mtext">Truck Monitoring</span>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="basic-table.html">Confirm Job</a></li>
+                        <li><a href="datatable.html">Job List</a></li>
+                    </ul>
+                </li>
+                <!--                                              REPORT SECTION                                                       -->
+                <li class="list-title">
+                    <div class="sidebar-small-cap">REPORT SECTION</div>
+                </li>
+                <!-- Report -->
+                <li class="dropdown">
+                    <a href="javascript:;" class="dropdown-toggle">
+                        <span class="micon icon-copy dw dw-file-85" id="icon-sidebar"></span><span class="mtext">Report</span>
+                    </a>
+                    <ul class="submenu">
+                        <li class="dropdown">
+                            <a href="javascript:;" class="dropdown-toggle">
+                                <span class="micon icon-copy dw dw-calendar-6"></span><span class="mtext">Daily Report</span>
+                            </a>
+                            <ul class="submenu child">
+                                <li><a href="javascript:;">Export</a></li>
+                                <li><a href="javascript:;">Import</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="javascript:;" class="dropdown-toggle">
+                                <span class="micon icon-copy dw dw-flight-1"></span><span class="mtext">Airfreight</span>
+                            </a>
+                            <ul class="submenu child">
+                                <li><a href="javascript:;">Process</a></li>
+                                <li><a href="javascript:;">Uncompleted Record</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="javascript:;" class="dropdown-toggle">
+                                <span class="micon icon-copy dw dw-ship"></span><span class="mtext">Seafreight</span>
+                            </a>
+                            <ul class="submenu child">
+                                <li><a href="javascript:;">Process</a></li>
+                                <li><a href="javascript:;">Uncompleted Record</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="javascript:;" class="dropdown-toggle">
+                                <span class="micon icon-copy dw dw-file-58"></span><span class="mtext">Customers Report</span>
+                            </a>
+                            <ul class="submenu child">
+                                <li><a href="javascript:;">Siemens</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <!--                                              ADMINISTRATION SECTION                                                       -->
+                <li class="list-title">
+                    <div class="sidebar-small-cap">ADMINISTRATION SECTION</div>
+                </li>
+                <!-- Management Users -->
                 <li>
-                    <a href="https://dropways.github.io/deskapp-free-single-page-website-template/" target="_blank" class="dropdown-toggle no-arrow">
-                        <span class="micon dw dw-paper-plane1"></span>
-                        <span class="mtext">Landing Page <img src="assets/vendors/images/coming-soon.png" alt="" width="25"></span>
+                    <a href="calendar.html" class="dropdown-toggle no-arrow">
+                        <span class="micon icon-copy dw dw-user-11" id="icon-sidebar"></span><span class="mtext">Management Users</span>
+                    </a>
+                </li>
+                <!-- Upload Freight -->
+                <li>
+                    <a href="calendar.html" class="dropdown-toggle no-arrow">
+                        <span class="micon icon-copy dw dw-file-55" id="icon-sidebar"></span><span class="mtext">Upload Freight</span>
+                    </a>
+                </li>
+                <!-- Consignee -->
+                <li>
+                    <a href="calendar.html" class="dropdown-toggle no-arrow">
+                        <span class="micon icon-copy dw dw-file-64" id="icon-sidebar"></span><span class="mtext">Consignee</span>
+                    </a>
+                </li>
+                <!-- Shipper -->
+                <li>
+                    <a href="calendar.html" class="dropdown-toggle no-arrow">
+                        <span class="micon icon-copy dw dw-file-57" id="icon-sidebar"></span><span class="mtext">Shipper</span>
+                    </a>
+                </li>
+                <!-- Truck -->
+                <li>
+                    <a href="calendar.html" class="dropdown-toggle no-arrow">
+                        <span class="micon icon-copy dw dw-delivery-truck-1" id="icon-sidebar"></span><span class="mtext">Truck</span>
+                    </a>
+                </li>
+                <!-- Document Type -->
+                <li>
+                    <a href="calendar.html" class="dropdown-toggle no-arrow">
+                        <span class="micon icon-copy dw dw-file-134" id="icon-sidebar"></span><span class="mtext">Document Type</span>
+                    </a>
+                </li>
+                <!-- Pricing Rate -->
+                <li>
+                    <a href="calendar.html" class="dropdown-toggle no-arrow">
+                        <span class="micon icon-copy dw dw-file-34" id="icon-sidebar"></span><span class="mtext">Pricing/Rate</span>
+                    </a>
+                </li>
+                <!-- Record Management -->
+                <li class="dropdown">
+                    <a href="javascript:;" class="dropdown-toggle">
+                        <span class="micon icon-copy dw dw-file-46" id="icon-sidebar"></span><span class="mtext">Record Management </span>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="ui-cards.html">Export</a></li>
+                        <li><a href="ui-cards.html">Import</a></li>
+                    </ul>
+                </li>
+                <!-- Company -->
+                <li>
+                    <a href="calendar.html" class="dropdown-toggle no-arrow">
+                        <span class="micon icon-copy fa fa-cog" id="icon-sidebar"></span><span class="mtext">Company</span>
+                    </a>
+                </li>
+                <!--                                              REMARK SECTION                                                       -->
+                <li class="list-title">
+                    <div class="sidebar-small-cap">REMARK SECTION</div>
+                </li>
+                <!-- Remark Export -->
+                <li class="dropdown">
+                    <a href="javascript:;" class="dropdown-toggle">
+                        <span class="micon icon-copy dw dw-add-file-1" id="icon-sidebar"></span><span class="mtext">Remark Export </span>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="ui-buttons.html">Pre-Clearance</a></li>
+                        <li><a href="ui-cards.html">Clearance</a></li>
+                        <li><a href="ui-cards-hover.html">Post-Clearance</a></li>
+                        <li><a href="ui-modals.html">E-File</a></li>
+                    </ul>
+                </li>
+                <!-- Remark Import -->
+                <li class="dropdown">
+                    <a href="javascript:;" class="dropdown-toggle">
+                        <span class="micon icon-copy dw dw-add-file-2" id="icon-sidebar"></span><span class="mtext">Remark Import </span>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="ui-buttons.html">Pre-Clearance</a></li>
+                        <li><a href="ui-cards.html">Clearance</a></li>
+                        <li><a href="ui-cards-hover.html">Post-Clearance</a></li>
+                        <li><a href="ui-modals.html">E-File</a></li>
+                    </ul>
+                </li>
+                <!--                                              SYSTEM SECTION                                                       -->
+                <li class="list-title">
+                    <div class="sidebar-small-cap">SYSTEM SECTION</div>
+                </li>
+                <!-- FAQ -->
+                <li>
+                    <a href="calendar.html" class="dropdown-toggle no-arrow">
+                        <span class="micon icon-copy dw dw-question" id="icon-sidebar"></span><span class="mtext">FAQ</span>
+                    </a>
+                </li>
+                <!-- Raise Ticket -->
+                <li>
+                    <a href="calendar.html" class="dropdown-toggle no-arrow">
+                        <span class="micon icon-copy fa fa-support" id="icon-sidebar"></span><span class="mtext">Raise Ticket</span>
                     </a>
                 </li>
             </ul>
