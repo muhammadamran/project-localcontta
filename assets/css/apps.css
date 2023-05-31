@@ -1,3 +1,19 @@
+.vl-and-font {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: -15px;
+}
+
+.j-font {
+    margin-left: 10px;
+}
+
+.vl {
+    border-left: 1px solid #002766;
+    height: 40px;
+  }
+
 .font-apps {
     font-size: 22px;
     font-weight: 700;

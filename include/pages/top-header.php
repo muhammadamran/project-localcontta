@@ -3,8 +3,11 @@
         <div class="menu-icon dw dw-menu"></div>
         <div class="search-toggle-icon dw dw-search2" data-toggle="header_search"></div>
         <div class="header-search">
-            <div>
-                <font class="font-apps">Localcontta</font>
+            <div class="vl-and-font">
+                <div class="vl"></div>
+                <div class="j-font">
+                    <font class="font-apps">Localcontta</font>
+                </div>
             </div>
         </div>
     </div>
