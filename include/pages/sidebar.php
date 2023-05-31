@@ -1,8 +1,10 @@
 <div class="left-side-bar">
     <div class="brand-logo">
-        <a href="index.html">
-            <img src="assets/vendors/images/deskapp-logo.svg" alt="" class="dark-logo">
-            <img src="assets/vendors/images/deskapp-logo-white.svg" alt="" class="light-logo">
+        <a href="index.html" style="display: flex;justify-content: center;background: #0099da;">
+            <div>
+                <img src="assets/app/logo/logo-blue.png" alt="" class="dark-logo">
+                <img src="assets/app/logo/logo-white.png" alt="" class="light-logo">
+            </div>
         </a>
         <div class="close-sidebar" data-toggle="left-sidebar-close">
             <i class="ion-close-round"></i>

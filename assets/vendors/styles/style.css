@@ -1431,7 +1431,7 @@ table.dataTable.dtr-inline.collapsed
 }
 .header-dark .header,
 .header-dark .header-left .header-search {
-  background: #002766;
+  background: #08c792;
 }
 .header-dark .header .user-info-dropdown .dropdown-toggle,
 .header-dark .header .user-info-dropdown .dropdown-toggle .user-name,
@@ -1778,7 +1778,7 @@ table.dataTable.dtr-inline.collapsed
   display: none;
 }
 .sidebar-light .left-side-bar {
-  background: #fff;
+  background: #08c792;
 }
 .sidebar-light .sidebar-menu .dropdown-toggle,
 .sidebar-light .sidebar-menu .submenu li a {
@@ -1796,7 +1796,7 @@ table.dataTable.dtr-inline.collapsed
   background-color: #002766;
 }
 .sidebar-light .menu-block .mCS-dark-2.mCSB_scrollTools .mCSB_draggerRail {
-  background-color: #0e132b;
+  background-color: #08c792;
 }
 .sidebar-menu .dropdown-divider {
   margin: 20px 0;

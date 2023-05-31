@@ -13,13 +13,13 @@
             <h4 class="weight-600 font-18 pb-10">Header Background</h4>
             <div class="sidebar-btn-group pb-30 mb-10">
                 <a href="javascript:void(0);" class="btn btn-outline-primary header-white active">White</a>
-                <a href="javascript:void(0);" class="btn btn-outline-primary header-dark">Dark</a>
+                <a href="javascript:void(0);" class="btn btn-outline-primary header-dark">Green</a>
             </div>
 
             <h4 class="weight-600 font-18 pb-10">Sidebar Background</h4>
             <div class="sidebar-btn-group pb-30 mb-10">
-                <a href="javascript:void(0);" class="btn btn-outline-primary sidebar-light ">White</a>
-                <a href="javascript:void(0);" class="btn btn-outline-primary sidebar-dark active">Dark</a>
+                <a href="javascript:void(0);" class="btn btn-outline-primary sidebar-light ">Green</a>
+                <a href="javascript:void(0);" class="btn btn-outline-primary sidebar-dark active">Blue</a>
             </div>
 
             <h4 class="weight-600 font-18 pb-10">Menu Dropdown Icon</h4>
