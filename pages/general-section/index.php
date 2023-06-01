@@ -90,7 +90,10 @@ $cont_import_air = mysqli_fetch_array($result_import_air);
                 </div>
             </div>
         </div>
-        <!-- Blue Data -->
+        <!-- Export Data -->
+        <div class="title pb-20">
+            <h2 class="h3 mb-0">Export Data</h2>
+        </div>
         <div class="row">
             <div class="col-md-6 mb-30" style="padding-right: 0px;padding-left: 0px;">
                 <div class="col-md-12">
@@ -124,19 +127,31 @@ $cont_import_air = mysqli_fetch_array($result_import_air);
                 <div class="col-md-12">
                     <div class="card-box pd-30 height-100-p">
                         <h4 class="mb-10 h6"><i class="icon-copy dw dw-sort"></i> Top 10 Record - By Consignee Name - Export</h4>
-                        <div class="panel panel-default">
+                        <hr>
+                        <div class="browser-visits">
                             <?php
                             $get_top10CE = $db->query("SELECT rcd_cnee, COUNT(rcd_id) as no FROM tb_master_export GROUP by rcd_cnee ORDER BY no DESC LIMIT 10");
                             $no = 0;
                             while ($rowtop10CE = $get_top10CE->fetch_assoc()) {
-                                $no++; ?>
-                                <a href="#" class="list-group-item">
-                                    <font><?= $no ?>.</font>
-                                    <?= $rowtop10CE['rcd_cnee']; ?>
-                                    <span class="pull-right text-muted small">
-                                        <em><?= $rowtop10CE['no']; ?></em>
-                                    </span>
-                                </a>
+                                $no++;
+                                if ($no == '1') {
+                                    $iconTopEx = '🏆';
+                                } else if ($no == '2') {
+                                    $iconTopEx = '🥈';
+                                } else if ($no == '3') {
+                                    $iconTopEx = '🥉';
+                                } else {
+                                    $iconTopEx = '';
+                                }
+                            ?>
+                                <div class="d-flex flex-wrap align-items-center" style="display: flex;justify-content: space-between;">
+                                    <div class="browser-name" style="font-size: 75%;font-weight: 700;line-height: 1;text-align: center;white-space: nowrap;vertical-align: baseline;">
+                                        <?= $no ?>. <?= $rowtop10CE['rcd_cnee']; ?> <?= $iconTopEx; ?>
+                                    </div>
+                                    <div>
+                                        <span class="badge badge-pill badge-default"><?= $rowtop10CE['no']; ?></span>
+                                    </div>
+                                </div>
                             <?php } ?>
                         </div>
                     </div>
@@ -144,34 +159,37 @@ $cont_import_air = mysqli_fetch_array($result_import_air);
             </div>
             <div class="col-lg-6 mb-30">
                 <div class="card-box pd-30 height-100-p">
-                    <div id="pieExport"></div>
-                </div>
-            </div>
-            <div class="col-lg-12 mb-30">
-                <div class="card-box pd-30 height-100-p">
                     <div id="exportArea"></div>
                 </div>
             </div>
-            <div class="col-md-6">
+        </div>
+        <!-- End Export Data -->
+
+        <!-- Import Data -->
+        <div class="title pb-20">
+            <h2 class="h3 mb-0">Import Data</h2>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mb-30" style="padding-right: 0px;padding-left: 0px;">
                 <div class="col-md-12">
                     <div class="card" style="padding: 30px 20px 30px 20px;">
                         <div class="card-body p-3">
                             <div class="card-content">
-                                <div style="display: grid;">
-                                    <font style="font-size: 25px;font-weight: 600;">Import</font>
-                                    <font style="font-size: 25px;font-weight: 600;"><?= $cont_import['total_import'] ?></font>
-                                </div>
                                 <div style="display: grid;">
                                     <font style="font-size: 16px;font-weight: 600;"><?= $cont_import_thismonth['total_import_thismonth'] ?> This Month</font>
                                     <div class="card_divider"></div>
                                     <font style="font-size: 10px;font-weight: 300;"><?= date('F Y'); ?></font>
                                 </div>
                                 <div style="display: grid;">
-                                    <font style="font-size: 25px;font-weight: 600;">SEA</font>
+                                    <font style="font-size: 25px;font-weight: 600;">Import</font>
+                                    <font style="font-size: 25px;font-weight: 600;"><?= $cont_import['total_import'] ?></font>
+                                </div>
+                                <div style="display: grid;">
+                                    <font style="font-size: 25px;font-weight: 600;"><i class="icon-copy dw dw-ship"></i> SEA</font>
                                     <font style="font-size: 16px;font-weight: 600;"><?= $cont_import_sea['total_import_sea'] ?> All Record</font>
                                 </div>
                                 <div style="display: grid;">
-                                    <font style="font-size: 25px;font-weight: 600;">AIR</font>
+                                    <font style="font-size: 25px;font-weight: 600;"><i class="icon-copy dw dw-flight-1"></i> AIR</font>
                                     <font style="font-size: 16px;font-weight: 600;"><?= $cont_import_air['total_import_air'] ?> All Record</font>
                                 </div>
                                 <div class="icon-bg-na">
@@ -181,47 +199,63 @@ $cont_import_air = mysqli_fetch_array($result_import_air);
                         </div>
                     </div>
                 </div>
+                <div class="col-md-12">
+                    <div class="card-box pd-30 height-100-p">
+                        <h4 class="mb-10 h6"><i class="icon-copy dw dw-sort"></i> Top 10 Record - By Consignee Name - Import</h4>
+                        <hr>
+                        <div class="browser-visits">
+                            <?php
+                            $get_top10CI = $db->query("SELECT rcd_cnee, COUNT(rcd_id) as no FROM tb_master_impor GROUP by rcd_cnee ORDER BY no DESC LIMIT 10");
+                            $no = 0;
+                            while ($rowtop10CI = $get_top10CI->fetch_assoc()) {
+                                $no++;
+                                if ($no == '1') {
+                                    $iconTopIm = '🏆';
+                                } else if ($no == '2') {
+                                    $iconTopIm = '🥈';
+                                } else if ($no == '3') {
+                                    $iconTopIm = '🥉';
+                                } else {
+                                    $iconTopIm = '';
+                                }
+                            ?>
+                                <div class="d-flex flex-wrap align-items-center" style="display: flex;justify-content: space-between;">
+                                    <div class="browser-name" style="font-size: 75%;font-weight: 700;line-height: 1;text-align: center;white-space: nowrap;vertical-align: baseline;">
+                                        <?= $no ?>. <?= $rowtop10CI['rcd_cnee']; ?> <?= $iconTopIm; ?>
+                                    </div>
+                                    <div>
+                                        <span class="badge badge-pill badge-default"><?= $rowtop10CI['no']; ?></span>
+                                    </div>
+                                </div>
+                            <?php } ?>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-        <!-- End Blue Data -->
-
-        <!-- Graph -->
-        <div class="row">
             <div class="col-lg-6 mb-30">
                 <div class="card-box pd-30 height-100-p">
-                    <h4 class="mb-30 h4">Graph Import</h4>
-                    <div id="pieImport"></div>
                     <div id="importArea"></div>
                 </div>
             </div>
         </div>
-        <!-- End Graph -->
-
+        <!-- End Import Data -->
+        <!-- Pie Chart -->
         <div class="row">
-            <div class="col-lg-5">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <i class="fas fa-building"></i> Top 10 Record - By Consignee Name - Import
-                    </div>
-                    <?php
-                    $get_top10CI = $db->query("SELECT rcd_cnee, COUNT(rcd_id) as no FROM tb_master_impor GROUP by rcd_cnee ORDER BY no DESC LIMIT 10");
-                    $no = 0;
-                    while ($rowtop10CI = $get_top10CI->fetch_assoc()) {
-                        $no++; ?>
-                        <a href="#" class="list-group-item">
-                            <font><?= $no ?>.</font>
-                            <?= $rowtop10CI['rcd_cnee']; ?>
-                            <span class="pull-right text-muted small">
-                                <em><?= $rowtop10CI['no']; ?></em>
-                            </span>
-                        </a>
-                    <?php } ?>
+            <div class="col-lg-6 mb-30">
+                <div class="card-box pd-30 height-100-p">
+                    <div id="pieExport"></div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 mb-30">
+                <div class="card-box pd-30 height-100-p">
+                    <div id="pieImport"></div>
                 </div>
             </div>
         </div>
+        <!-- End Pie Chart -->
     </div>
 </div>
-<!-- MAIN -->
 <script src="assets/highcharts/highcharts.js"></script>
 <script src="assets/highcharts/highcharts-more.js"></script>
 <script src="assets/highcharts/modules/exporting.js"></script>

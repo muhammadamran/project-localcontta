@@ -19,7 +19,7 @@
                 </li>
                 <!-- Dashboard -->
                 <li>
-                    <a href="index.php" class="dropdown-toggle no-arrow">
+                    <a href="index.php" class="dropdown-toggle no-arrow <?= empty($_GET['m']) ? 'active' : '' ?>">
                         <span class="micon dw dw-analytics-4" id="icon-sidebar"></span><span class="mtext">Dashboard</span>
                     </a>
                 </li>
