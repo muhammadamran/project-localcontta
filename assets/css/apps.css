@@ -94,3 +94,9 @@
     width: 65px;
     height: 65px;
 }
+
+.up-page-title {
+    margin-top: -10px;
+    margin-left: -20px;
+    margin-right: -20px;
+}

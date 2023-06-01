@@ -2060,11 +2060,11 @@ body.IE .register-page-wrap .container {
 }
 .page-header {
   background-color: #fff;
-  border-radius: 10px;
+  border-radius: 0px;
   -webkit-box-shadow: 0 0 28px rgba(0, 0, 0, 0.08);
   box-shadow: 0 0 28px rgba(0, 0, 0, 0.08);
-  margin-bottom: 30px;
-  padding: 20px;
+  margin-bottom: 0px;
+  padding: 20px 40px 20px 40px;
 }
 .page-header .row {
   -webkit-box-align: center;

@@ -1901,12 +1901,12 @@ body.IE .register-page-wrap .container{
 	background-color: #ffffff;
 	-webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
-	border-radius: 10px;
+	border-radius: 0px;
 	-webkit-box-shadow: 0px 0px 28px rgba(0, 0, 0, .08);
 	-moz-box-shadow: 0px 0px 28px rgba(0, 0, 0, .08);
 	box-shadow: 0px 0px 28px rgba(0, 0, 0, .08);
-	margin-bottom: 30px;
-	padding: 20px;
+	margin-bottom: 0px;
+	padding: 20px 40px 20px 40px;
 }
 .page-header .row{
 	align-items: center;

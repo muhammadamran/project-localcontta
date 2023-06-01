@@ -1,6 +1,6 @@
 <div class="left-side-bar">
     <div class="brand-logo">
-        <a href="index.html" style="display: flex;justify-content: center;background: #0099da;">
+        <a href="index.html" style="display: flex;justify-content: center;">
             <div>
                 <img src="assets/app/logo/logo-blue.png" alt="" class="dark-logo">
                 <img src="assets/app/logo/logo-white.png" alt="" class="light-logo">
@@ -25,7 +25,7 @@
                 </li>
                 <!-- Search -->
                 <li>
-                    <a href="calendar.html" class="dropdown-toggle no-arrow">
+                    <a href="index.php?m=general-section&s=search" class="dropdown-toggle no-arrow <?= !empty($_GET['s']) && $_GET['s'] == 'search' ? 'active' : '' ?>">
                         <span class="micon dw dw-search" id="icon-sidebar"></span><span class="mtext">Search</span>
                     </a>
                 </li>
