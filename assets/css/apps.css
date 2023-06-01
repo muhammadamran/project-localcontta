@@ -1,193 +1,195 @@
 .vl-and-font {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    margin-left: -15px;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	margin-left: -15px;
 }
 
 .j-font {
-    margin-left: 10px;
+	margin-left: 10px;
 }
 
 .vl {
-    border-left: 1px solid #002766;
-    height: 50px;
+	border-left: 1px solid #002766;
+	height: 50px;
 }
 
 .apps-company {
-    display: grid;
-    justify-content: flex-start;
-    align-items: center;
+	display: grid;
+	justify-content: flex-start;
+	align-items: center;
 }
 
 .font-apps {
-    font-size: 22px;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: #002766;
+	font-size: 22px;
+	font-weight: 700;
+	text-transform: uppercase;
+	color: #002766;
 }
 
 .font-company {
-    font-size: 12px;
-    font-weight: 400;
-    color: #002766;
+	font-size: 12px;
+	font-weight: 400;
+	color: #002766;
 }
 
 .sidebar-menu .sidebar-small-cap {
-    font-size: 14px;
-    letter-spacing: .03em;
-    text-transform: uppercase;
-    font-weight: 700;
-    color: #ecf0f4;
-    padding: 10px 15px 10px /* padding: 10px 20px 0px 10px; */;
-    /* text-shadow: 0 0 3px #ecf0f4; */
+	font-size: 14px;
+	letter-spacing: .03em;
+	text-transform: uppercase;
+	font-weight: 700;
+	color: #ecf0f4;
+	padding: 10px 15px 10px /* padding: 10px 20px 0px 10px; */;
+	/* text-shadow: 0 0 3px #ecf0f4; */
 }
 
 .sidebar-light .sidebar-menu .sidebar-small-cap {
-    font-size: 14px;
-    letter-spacing: .03em;
-    text-transform: uppercase;
-    font-weight: 700;
-    color: #000;
-    padding: 10px 15px 10px /* padding: 10px 20px 0px 10px; */;
-    /* text-shadow: 0 0 3px #ecf0f4; */
+	font-size: 14px;
+	letter-spacing: .03em;
+	text-transform: uppercase;
+	font-weight: 700;
+	color: #000;
+	padding: 10px 15px 10px /* padding: 10px 20px 0px 10px; */;
+	/* text-shadow: 0 0 3px #ecf0f4; */
 }
 
 .list-title {
-    background: #002460;
+	/* background: #002460; */
+	background: transparent;
 }
 
 .sidebar-light .list-title {
-    background: #04b987;
+	/* background: #04b987; */
+	background: transparent;
 }
 
 #icon-sidebar {
-    background: #0099da;
-    box-shadow: 0 0 4px 0px rgb(0 153 218);
-    font-weight: 500;
+	background: #0099da;
+	box-shadow: 0 0 4px 0px rgb(0 153 218);
+	font-weight: 500;
 }
 
 .mtext {
-    font-weight: 500;
+	font-weight: 500;
 }
 
 .header-profiles {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #003369;
-    color: #fff;
-    padding: 0px 10px;
-    border-radius: 100%;
-    width: 45px;
-    height: 45px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #003369;
+	color: #fff;
+	padding: 0px 10px;
+	border-radius: 100%;
+	width: 45px;
+	height: 45px;
 }
 
 .header-profiles-home {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #003369;
-    color: #fff;
-    padding: 0px 10px;
-    border-radius: 100%;
-    width: 65px;
-    height: 65px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #003369;
+	color: #fff;
+	padding: 0px 10px;
+	border-radius: 100%;
+	width: 65px;
+	height: 65px;
 }
 
 .up-page-title {
-    margin-top: -10px;
-    margin-left: -20px;
-    margin-right: -20px;
+	margin-top: -10px;
+	margin-left: -20px;
+	margin-right: -20px;
 }
 
 /* From Old */
 
 @media (min-width: 991.5px) {
-    .position-oke {
-        display: flex;
-        align-items: center;
-    }
+	.position-oke {
+		display: flex;
+		align-items: center;
+	}
 }
 
 .logo-dashboard-oke {
-    background: transparent;
-    padding: 20px;
-    border-radius: 5px;
-    margin-bottom: 10px;
+	background: transparent;
+	padding: 20px;
+	border-radius: 5px;
+	margin-bottom: 10px;
 }
 
 .title-oke {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .title-oke-two {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 10px;
 }
 
 .oke__divider {
-    background: rgb(0 39 102);
-    height: 2px;
-    margin: 0px 21px;
-    box-sizing: border-box;
-    margin-bottom: 10px;
+	background: rgb(0 39 102);
+	height: 2px;
+	margin: 0px 21px;
+	box-sizing: border-box;
+	margin-bottom: 10px;
 }
 
 .kn-oke {
-    font-size: 14px;
-    font-weight: 600;
-    color: #002766;
-    text-transform: uppercase;
+	font-size: 14px;
+	font-weight: 600;
+	color: #002766;
+	text-transform: uppercase;
 }
 
 .kn-oke:hover {
-    font-size: 14px;
-    font-weight: 600;
-    color: #26c5e6;
-    text-transform: uppercase;
+	font-size: 14px;
+	font-weight: 600;
+	color: #26c5e6;
+	text-transform: uppercase;
 }
 
 .oke-lah {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .bacaan-import {
-    background: linear-gradient(45deg, #428bca, #428bca);
-    color: #fff;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    font-size: 15px;
-    font-weight: 600;
+	background: linear-gradient(45deg, #428bca, #428bca);
+	color: #fff;
+	padding: 10px;
+	margin-bottom: 10px;
+	border-radius: 5px;
+	font-size: 15px;
+	font-weight: 600;
 }
 
 @media (max-width: 613.5px) {
-    .card-content {
-        display: block;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .icon-bg-na {
-        display: inline-table;
-        margin-top: 10px;
-    }
+	.card-content {
+		display: block;
+		justify-content: space-between;
+		align-items: center;
+	}
+	
+	.icon-bg-na {
+		display: inline-table;
+		margin-top: 10px;
+	}
 }
 
 .list-group-item {
-    position: relative;
-    display: block;
-    padding: 10px 15px;
-    margin-bottom: -1px;
-    background-color: #fff;
-    border: 1px solid #c6e4f5;
+	position: relative;
+	display: block;
+	padding: 10px 15px;
+	margin-bottom: -1px;
+	background-color: #fff;
+	border: 1px solid #c6e4f5;
 }
 /*Icon and Logo*/
 .login-logo {
@@ -202,10 +204,20 @@
 
 .menu__divider {
 	background: rgb(255 255 255);
-    height: 1px;
-    width: calc(100% - 32px);
-    margin: 10px 16px;
-    box-sizing: border-box;
+	height: 1px;
+	width: calc(100% - 32px);
+	margin: 10px 16px;
+	box-sizing: border-box;
+}
+
+.card_divider_title {
+	background: rgb(27 49 51 / 8%);
+	height: 1px;
+	width: calc(100% - -1px);
+	margin: 0px 0px;
+	box-sizing: border-box;
+	margin-top: 5px;
+	margin-bottom: 5px;
 }
 
 .card_divider {
@@ -340,11 +352,11 @@
 	.role-show {
 		font-size: 0px;
 	}
-
+	
 	li.dropdown.notify {
 		display: none;
 	}
-
+	
 	li.dropdown.user {
 		margin-left: -13px;
 	}
@@ -563,22 +575,79 @@ li.show {
 }
 
 .oke__divider_page {
-    background: rgb(0 39 102);
-    height: 2px;
-    margin: 0px 0px;
-    box-sizing: border-box;
-    width: calc(100% - 0px);
-    margin-bottom: 10px;
-    margin-top: -20px;
+	background: rgb(0 39 102);
+	height: 2px;
+	margin: 0px 0px;
+	box-sizing: border-box;
+	width: calc(100% - 0px);
+	margin-bottom: 10px;
+	margin-top: -20px;
 }
 
 .oke__divider_page_white {
-    background: rgb(255, 255, 255);
-    height: 2px;
-    margin: 0px 0px;
-    box-sizing: border-box;
-    width: calc(100% - 0px);
-    margin-bottom: 10px;
+	background: rgb(255, 255, 255);
+	height: 2px;
+	margin: 0px 0px;
+	box-sizing: border-box;
+	width: calc(100% - 0px);
+	margin-bottom: 10px;
 	margin-top: 5px;
 }
+
+/* Page Search */
+/* Style the tab */
+.tab {
+	overflow: hidden;
+	border: 1px solid #aaaaaa;
+	background-color: #55b8f2;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+	background-color: inherit;
+	float: left;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	padding: 14px 16px;
+	transition: 0.3s;
+	font-size: 17px;
+	color: #fff;
+	font-weight: 500;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+	background-color: #1a3f7a;
+	color: #fff;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+	background-color: #002765;
+	color: #fff;
+}
+
+/* Style the tab content */
+.tabcontent {
+	display: none;
+	padding: 6px 12px;
+	border: 1px solid #ccc;
+	border-top: none;
+}
+
+.ref-tab {
+	padding: 20px;
+	margin-left: -15px;
+	background: #002765;
+	color: #fff;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+/* End Page Search */
 /* End From Old */
+.icon-btn-y{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
