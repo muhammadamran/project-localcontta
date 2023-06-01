@@ -19,13 +19,12 @@
         </div>
     </div>
     <div class="header-right">
-        <div class="dashboard-setting user-notification">
-            <div class="dropdown">
-                <a class="dropdown-toggle no-arrow" href="javascript:;" data-toggle="right-sidebar">
-                    <i class="dw dw-settings2"></i>
-                </a>
-            </div>
+        <!-- Clock -->
+        <div class="dashboard-setting user-notification" style="margin-top: -10px;display: flex;align-items: center;">
+            <i class="icon-copy dw dw-wall-clock1" style="font-size: 20px;"></i>
+            <div style="margin-left: 5px;font-size: 14px;" id="ct"></div>
         </div>
+        <!-- End Clock -->
         <div class="user-notification">
             <div class="dropdown">
                 <a class="dropdown-toggle no-arrow" href="#" role="button" data-toggle="dropdown">
@@ -36,59 +35,36 @@
                     <div class="notification-list mx-h-350 customscroll">
                         <ul>
                             <li>
-                                <a href="#">
-                                    <img src="assets/vendors/images/img.jpg" alt="">
-                                    <h3>John Doe</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed...</p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="assets/vendors/images/photo1.jpg" alt="">
-                                    <h3>Lea R. Frith</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed...</p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="assets/vendors/images/photo2.jpg" alt="">
-                                    <h3>Erik L. Richards</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed...</p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="assets/vendors/images/photo3.jpg" alt="">
-                                    <h3>John Doe</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed...</p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="assets/vendors/images/photo4.jpg" alt="">
-                                    <h3>Renee I. Hansen</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed...</p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="assets/vendors/images/img.jpg" alt="">
-                                    <h3>Vicki M. Coleman</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed...</p>
-                                </a>
+                                <div>
+                                    <img src="assets/app/svg/no-data.svg" alt="">
+                                </div>
                             </li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="dashboard-setting user-notification">
+            <div class="dropdown">
+                <a class="dropdown-toggle no-arrow" href="javascript:;" data-toggle="right-sidebar">
+                    <i class="dw dw-settings2"></i>
+                </a>
+            </div>
+        </div>
         <div class="user-info-dropdown">
             <div class="dropdown">
                 <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown">
-                    <span class="user-icon">
-                        <img src="assets/vendors/images/photo1.jpg" alt="">
-                    </span>
-                    <span class="user-name">Ross C. Lopez</span>
+                    <!-- <span class="user-icon"> -->
+                    <!-- <img src="assets/vendors/images/photo1.jpg" alt=""> -->
+                    <!-- </span> -->
+                    <div class="header-profiles">
+                        <?php
+                        $FName = substr($_SESSION['FIRST_NAME'], 0, 1);
+                        $LName = substr($_SESSION['LAST_NAME'], 0, 1);
+                        ?>
+                        <font style="text-transform: uppercase;"><?= $FName ?><?= $LName ?></font>
+                    </div>
+                    <!-- <span class="user-name"><?= $_SESSION['FIRST_NAME'] ?></span> -->
                 </a>
                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
                     <a class="dropdown-item" href="profile.html"><i class="dw dw-user1"></i> Profile</a>

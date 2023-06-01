@@ -17,8 +17,20 @@
     <link rel="stylesheet" type="text/css" href="assets/vendors/styles/style.css">
     <link rel="stylesheet" type="text/css" href="assets/css/apps.css">
 </head>
+<script type="text/javascript">
+    function display_c() {
+        var refresh = 1000;
+        mytime = setTimeout('display_ct()', refresh)
+    }
 
-<body>
+    function display_ct() {
+        var x = new Date()
+        document.getElementById('ct').innerHTML = x;
+        display_c();
+    }
+</script>
+
+<body onload=display_ct();>
     <div class="pre-loader">
         <div class="pre-loader-box">
             <div class="loader-logo"><img src="assets/app/icon/icon.png" alt="Loader" width="150px"></div>

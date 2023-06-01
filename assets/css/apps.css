@@ -70,3 +70,27 @@
 .mtext {
     font-weight: 500;
 }
+
+.header-profiles {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #003369;
+    color: #fff;
+    padding: 0px 10px;
+    border-radius: 100%;
+    width: 45px;
+    height: 45px;
+}
+
+.header-profiles-home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #003369;
+    color: #fff;
+    padding: 0px 10px;
+    border-radius: 100%;
+    width: 65px;
+    height: 65px;
+}

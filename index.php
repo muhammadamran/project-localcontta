@@ -21,7 +21,7 @@ if ($get_api[1] == 'api') {
         include "include/pages/sidebar.php";
 
         if (empty($_GET['m']) and empty($_GET['s'])) {
-            include "pages/home/index.php";
+            include "pages/general-section/index.php";
         } else if ($_GET['m'] != "" and $_GET['s'] != "") {
             if (file_exists("pages/" . $_GET['m'] . "/" . $_GET['s'] . ".php")) {
                 include "pages/" . $_GET['m'] . "/" . $_GET['s'] . ".php";
