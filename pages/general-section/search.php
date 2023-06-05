@@ -53,7 +53,7 @@ if (isset($_GET['findtwo'])) {
     <div class="xs-pd-20-10 pd-ltr-20">
         <!-- UI -->
         <div class="row">
-            <!-- End REF/TN -->
+            <!-- REF/TN -->
             <div class="col-md-6 mb-30">
                 <div class="card card-box">
                     <div class="card-header">
@@ -63,141 +63,101 @@ if (isset($_GET['findtwo'])) {
                         </select>
                     </div>
                     <div class="card-body">
-                        <blockquote class="blockquote mb-0">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                            <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
-                        </blockquote>
+                        <form method="get" action="search.php" id="fformone" style="display: show;">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>REF / TN </label>
+                                        <?php if ($findInputREFTN == '') { ?>
+                                            <input type="text" name="findInputREFTN" id="idfindInputREFTN" class="form-control" placeholder="Input REF / TN..." required>
+                                        <?php } else { ?>
+                                            <input type="text" name="findInputREFTN" id="idfindInputREFTN" class="form-control" placeholder="Input REF / TN..." value="<?= $findInputREFTN; ?>">
+                                        <?php } ?>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Type</label>
+                                        <select type="text" name="findInputTypeREFTN" id="idfindInputTypeREFTN" class="form-control" required>
+                                            <?php if ($findInputTypeREFTN == '') { ?>
+                                                <option value="">-- Select Type --</option>
+                                            <?php } else { ?>
+                                                <option value="<?= $findInputTypeREFTN; ?>"><?= $findInputTypeREFTN; ?></option>
+                                                <option value="">-- Select Type --</option>
+                                            <?php } ?>
+                                            <option value="import">Import</option>
+                                            <option value="export">Export</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-12" style="text-align: right;">
+                                    <a href="search.php" type="button" class="btn btn-info">
+                                        <div class="icon-btn-y">
+                                            <i class="icon-copy dw dw-delete"></i>
+                                            &nbsp;Cancel
+                                        </div>
+                                    </a>
+                                    <button type="submit" name="findone" id="idbtnfindone" class="btn btn-primary"><i class="icon-copy dw dw-search"></i> Search</button>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
             <!-- End REF/TN -->
-            <!-- End No. Pengajuan (AJU) -->
+            <!-- No. Pengajuan (AJU) -->
             <div class="col-md-6 mb-30">
                 <div class="card card-box">
                     <div class="card-header">
                         <i class="icon-copy dw dw-filter1"></i> Filter Data - by
                         <select type="text" id="findby" style="background: transparent;border-color: transparent;">
-                            <option value="opone">Aju</option>
+                            <option value="opone">No. Pengajuan</option>
                         </select>
                     </div>
                     <div class="card-body">
-                        <blockquote class="blockquote mb-0">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                            <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
-                        </blockquote>
+                        <form method="get" action="search.php" id="fformone" style="display: show;">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>No. Pengajuan </label>
+                                        <?php if ($findInputAJU == '') { ?>
+                                            <input type="text" name="findInputAJU" id="idfindInputAJU" class="form-control" placeholder="Input No. Pengajuan..." required>
+                                        <?php } else { ?>
+                                            <input type="text" name="findInputAJU" id="idfindInputAJU" class="form-control" placeholder="Input No. Pengajuan..." value="<?= $findInputAJU; ?>">
+                                        <?php } ?>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Type</label>
+                                        <select type="text" name="findInputTypeAJU" id="idfindInputTypeAJU" class="form-control" required>
+                                            <?php if ($findInputTypeAJU == '') { ?>
+                                                <option value="">-- Select Type --</option>
+                                            <?php } else { ?>
+                                                <option value="<?= $findInputTypeAJU; ?>"><?= $findInputTypeAJU; ?></option>
+                                                <option value="">-- Select Type --</option>
+                                            <?php } ?>
+                                            <option value="import">Import</option>
+                                            <option value="export">Export</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-12" style="text-align: right;">
+                                    <a href="search.php" type="button" class="btn btn-info">
+                                        <div class="icon-btn-y">
+                                            <i class="icon-copy dw dw-delete"></i>
+                                            &nbsp;Cancel
+                                        </div>
+                                    </a>
+                                    <button type="submit" name="findtwo" id="idbtnfindtwo" class="btn btn-primary"><i class="icon-copy dw dw-search"></i> Search</button>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
             <!-- End No. Pengajuan (AJU) -->
         </div>
-        <!-- Search -->
-        <div class="row">
-            <div class="col-lg-6">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <i class="icon-copy dw dw-filter1"></i> Filter Data - by
-                        <select type="text" id="findby" style="background: transparent;border-color: transparent;">
-                            <option value="opone">REF/TN</option>
-                        </select>
-                    </div>
-                    <div class="panel-body">
-                        <div class="page-add">
-                            <form method="get" action="search.php" id="fformone" style="display: show;">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Ref / Tn </label>
-                                            <?php if ($findInputREFTN == '') { ?>
-                                                <input type="text" name="findInputREFTN" id="idfindInputREFTN" class="form-control" placeholder="Input Ref / Tn..." required>
-                                            <?php } else { ?>
-                                                <input type="text" name="findInputREFTN" id="idfindInputREFTN" class="form-control" placeholder="Input Ref / Tn..." value="<?= $findInputREFTN; ?>">
-                                            <?php } ?>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Type</label>
-                                            <select type="text" name="findInputTypeREFTN" id="idfindInputTypeREFTN" class="form-control" required>
-                                                <?php if ($findInputTypeREFTN == '') { ?>
-                                                    <option value="">-- Select Type --</option>
-                                                <?php } else { ?>
-                                                    <option value="<?= $findInputTypeREFTN; ?>"><?= $findInputTypeREFTN; ?></option>
-                                                    <option value="">-- Select Type --</option>
-                                                <?php } ?>
-                                                <option value="import">Import</option>
-                                                <option value="export">Export</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12" style="text-align: right;">
-                                        <a href="search.php" type="button" class="btn btn-info">
-                                            <div class="icon-btn-y">
-                                                <i class="icon-copy dw dw-delete"></i>
-                                                &nbsp;Cancel
-                                            </div>
-                                        </a>
-                                        <button type="submit" name="findone" id="idbtnfindone" class="btn btn-primary"><i class="icon-copy dw dw-search"></i> Search</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <i class="icon-copy dw dw-filter1"></i> Filter Data - by
-                        <select type="text" id="findby" style="background: transparent;border-color: transparent;">
-                            <option value="opone">Aju</option>
-                        </select>
-                    </div>
-                    <div class="panel-body">
-                        <div class="page-add">
-                            <form method="get" action="search.php" id="fformone" style="display: show;">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Aju </label>
-                                            <?php if ($findInputAJU == '') { ?>
-                                                <input type="text" name="findInputAJU" id="idfindInputAJU" class="form-control" placeholder="Input Aju..." required>
-                                            <?php } else { ?>
-                                                <input type="text" name="findInputAJU" id="idfindInputAJU" class="form-control" placeholder="Input Aju..." value="<?= $findInputAJU; ?>">
-                                            <?php } ?>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Type</label>
-                                            <select type="text" name="findInputTypeAJU" id="idfindInputTypeAJU" class="form-control" required>
-                                                <?php if ($findInputTypeAJU == '') { ?>
-                                                    <option value="">-- Select Type --</option>
-                                                <?php } else { ?>
-                                                    <option value="<?= $findInputTypeAJU; ?>"><?= $findInputTypeAJU; ?></option>
-                                                    <option value="">-- Select Type --</option>
-                                                <?php } ?>
-                                                <option value="import">Import</option>
-                                                <option value="export">Export</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12" style="text-align: right;">
-                                        <a href="search.php" type="button" class="btn btn-info">
-                                            <div class="icon-btn-y">
-                                                <i class="icon-copy dw dw-delete"></i>
-                                                &nbsp;Cancel
-                                            </div>
-                                        </a>
-                                        <button type="submit" name="findtwo" id="idbtnfindtwo" class="btn btn-primary"><i class="icon-copy dw dw-search"></i> Search</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- End Search -->
         <!-- UI -->
     </div>
 </div>
