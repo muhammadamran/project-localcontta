@@ -57,7 +57,10 @@ if (isset($_GET['findtwo'])) {
             <div class="col-md-6 mb-30">
                 <div class="card card-box">
                     <div class="card-header">
-                        Quote
+                        <i class="icon-copy dw dw-filter1"></i> Filter Data - by
+                        <select type="text" id="findby" style="background: transparent;border-color: transparent;">
+                            <option value="opone">REF/TN</option>
+                        </select>
                     </div>
                     <div class="card-body">
                         <blockquote class="blockquote mb-0">
@@ -72,7 +75,10 @@ if (isset($_GET['findtwo'])) {
             <div class="col-md-6 mb-30">
                 <div class="card card-box">
                     <div class="card-header">
-                        Quote
+                        <i class="icon-copy dw dw-filter1"></i> Filter Data - by
+                        <select type="text" id="findby" style="background: transparent;border-color: transparent;">
+                            <option value="opone">Aju</option>
+                        </select>
                     </div>
                     <div class="card-body">
                         <blockquote class="blockquote mb-0">
