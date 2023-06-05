@@ -19,6 +19,9 @@ if (isset($_POST['findtwo'])) {
     $resultaju = 'show';
 }
 ?>
+<?php
+// include "include/pages/cssDataTables.php";
+?>
 <div class="main-container">
     <!-- Page Title -->
     <div class="up-page-title">
@@ -169,88 +172,194 @@ if (isset($_POST['findtwo'])) {
                     <!-- IF REF IMPORT -->
                     <div class="panel panel-default">
                         <div class="panel-body">
-                            <div class="p-b-10" style="margin-bottom: 15px;">
-                                <div class="alert-modify">
-                                    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-                                    <div>
-                                        <font style="font-size: 16px;font-weight: 600;">Search Result! [Import List By REF/TN]</font>
-                                    </div>
+                            <div class="card-box mb-30">
+                                <div class="pd-20">
+                                    <h4 class="text-blue h4">Search Result! [Import List By REF/TN]</h4>
                                     <hr>
                                     <p style="margin-bottom: 0px;">REF/TN: <b><?= $findInputREFTN ?></b></p>
                                     <p style="margin-bottom: 0px;">Type: <b><?= $findInputTypeREFTN ?></b></p>
                                 </div>
-                            </div>
-                            <div class="table-responsive">
-                                <table class="display hover" id="FINDreftnImport">
-                                    <thead>
-                                        <tr>
-                                            <th class="no-sort">#</th>
-                                            <th class="no-sort" style="text-align: center;">Number</th>
-                                            <th class="no-sort" style="text-align: center;">Shipper & Consignee</th>
-                                            <th class="no-sort" style="text-align: center;">Details</th>
-                                            <th class="no-sort" style="text-align: center;">Record</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php
-                                        if (isset($_POST['findone'])) {
-                                            $findInputREFTN = $_POST['findInputREFTN'];
-                                            $findInputTypeREFTN = $_POST['findInputTypeREFTN'];
-                                            $result = $db->query("SELECT * FROM tb_master_impor INNER JOIN 
-                                                        tb_imp_pre ON tb_master_impor.rcd_id=tb_imp_pre.rcd_id  
-                                                        INNER JOIN
-                                                        tb_imp_clear ON tb_master_impor.rcd_id=tb_imp_clear.rcd_id
-                                                        INNER JOIN
-                                                        tb_imp_post ON tb_master_impor.rcd_id=tb_imp_post.rcd_id
-                                                        INNER JOIN                        
-                                                        tb_record_miles_import ON tb_master_impor.rcd_id=tb_record_miles_import.rcd_id
-                                                        WHERE tb_master_impor.rcd_ref='$findInputREFTN' AND tb_master_impor.rcd_type='$findInputTypeREFTN'");
-                                        }
-                                        if (mysqli_num_rows($result) > 0) {
-                                            $no = 0;
-                                            while ($row = $result->fetch_assoc()) {
-                                                $no++;
-                                        ?>
-                                                <tr>
-                                                    <td><?= $no ?>.</td>
-                                                    <td>
-                                                        <font><b>ID: </b><?= $row['rcd_id']; ?></font>
-                                                        <br>
-                                                        <font><b>REF/TN: </b><?= $row['rcd_ref']; ?></font>
-                                                        <br>
-                                                        <font><b>AJU: </b><?= $row['rcd_aju']; ?></font>
-                                                        <br>
-                                                        <font><b>INV: </b><?= $row['rcd_inv_no']; ?></font>
-                                                        <br>
-                                                        <font><b>HBL: </b><?= $row['rcd_hbl']; ?></font>
-                                                    </td>
-                                                    <td>
-                                                        <font><b>Shipper: </b><?= $row['rcd_shipper']; ?></font>
-                                                        <br>
-                                                        <font><b>Consignee: </b><?= $row['rcd_cnee']; ?></font>
-                                                    </td>
-                                                    <td style='text-align: center;'>
-                                                        <font><b>ETA: </b><?= $row['rcd_eta']; ?></font>
-                                                        <font><b>ATA: </b><?= $row['rcd_ata']; ?></font>
-                                                        <hr>
-                                                        <font><b>MOT: </b><?= $row['rcd_mot']; ?></font>
-                                                        <br>
-                                                        <font><b>COO: </b><?= $row['rcd_coo']; ?></font>
-                                                    </td>
-                                                    <td>
-                                                        <font><b>Created Date:</b><?= $row['rcd_create_date']; ?></font>
-                                                        <br>
-                                                        <font><b>Created By: </b><?= $row['rcd_create_by']; ?></font>
-                                                    </td>
-                                                </tr>
-                                            <?php } ?>
-                                        <?php } else { ?>
-                                            <tr>
-                                                <td colspan="6" align="center"><b><i>No Available Record</i></b></td>
-                                            </tr>
-                                        <?php } ?>
-                                    </tbody>
-                                </table>
+                                <div class="pb-20">
+                                    <div class="table-responsive">
+                                        <table id="FINDreftnImport" class="table table-bordered table-td-valign-middle">
+                                            <tbody>
+                                                <?php
+                                                if (isset($_POST['findone'])) {
+                                                    $findInputREFTN = $_POST['findInputREFTN'];
+                                                    $findInputTypeREFTN = $_POST['findInputTypeREFTN'];
+                                                    $result = $db->query("SELECT * FROM tb_master_impor INNER JOIN 
+                                                                tb_imp_pre ON tb_master_impor.rcd_id=tb_imp_pre.rcd_id  
+                                                                INNER JOIN
+                                                                tb_imp_clear ON tb_master_impor.rcd_id=tb_imp_clear.rcd_id
+                                                                INNER JOIN
+                                                                tb_imp_post ON tb_master_impor.rcd_id=tb_imp_post.rcd_id
+                                                                INNER JOIN                        
+                                                                tb_record_miles_import ON tb_master_impor.rcd_id=tb_record_miles_import.rcd_id
+                                                                WHERE tb_master_impor.rcd_ref='$findInputREFTN' AND tb_master_impor.rcd_type='$findInputTypeREFTN'");
+                                                }
+                                                if (mysqli_num_rows($result) > 0) {
+                                                    $no = 0;
+                                                    while ($row = $result->fetch_assoc()) {
+                                                        $no++;
+                                                ?>
+                                                        <tr>
+                                                            <td>
+                                                                <div>
+                                                                    <!-- TOP -->
+                                                                    <div>
+                                                                        <div>
+                                                                            <font style="font-size: 12px;font-weight:900"><?= $row['rcd_id'] ?></font>
+                                                                        </div>
+                                                                        <div style="margin-top: -7px;">
+                                                                            <font style="font-size: 8px;font-weight:500;color:#9e9e9e">ID</font>
+                                                                        </div>
+                                                                    </div>
+                                                                    <!-- Buttom -->
+                                                                    <div style="display: flex;justify-content: space-between;align-items: center;margin-top: 10px;">
+                                                                        <div>
+                                                                            <div>
+                                                                                <font style="font-size: 12px;font-weight:900"><?= $row['rcd_ref'] ?></font>
+                                                                            </div>
+                                                                            <div style="margin-top: -7px;">
+                                                                                <font style="font-size: 8px;font-weight:500;color:#9e9e9e">REF/TN</font>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div>
+                                                                            <div>
+                                                                                <font style="font-size: 12px;font-weight:900"><?= $row['rcd_aju'] ?></font>
+                                                                            </div>
+                                                                            <div style="margin-top: -7px;">
+                                                                                <font style="font-size: 8px;font-weight:500;color:#9e9e9e">No. Pengajuan</font>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <!-- TOP -->
+                                                                    <div>
+                                                                        <div>
+                                                                            <font style="font-size: 12px;font-weight:900"><?= $row['rcd_inv_no'] ?></font>
+                                                                        </div>
+                                                                        <div style="margin-top: -7px;">
+                                                                            <font style="font-size: 8px;font-weight:500;color:#9e9e9e">Invoice</font>
+                                                                        </div>
+                                                                    </div>
+                                                                    <!-- Buttom -->
+                                                                    <div style="margin-top: 10px;">
+                                                                        <div>
+                                                                            <font style="font-size: 12px;font-weight:900"><?= $row['rcd_hbl'] ?></font>
+                                                                        </div>
+                                                                        <div style="margin-top: -7px;">
+                                                                            <font style="font-size: 8px;font-weight:500;color:#9e9e9e">HBL</font>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <!-- TOP -->
+                                                                    <div>
+                                                                        <div>
+                                                                            <font style="font-size: 12px;font-weight:900"><?= $row['rcd_shipper'] ?></font>
+                                                                        </div>
+                                                                        <div style="margin-top: -7px;">
+                                                                            <font style="font-size: 8px;font-weight:500;color:#9e9e9e">Shipper</font>
+                                                                        </div>
+                                                                    </div>
+                                                                    <!-- Buttom -->
+                                                                    <div style="margin-top: 10px;">
+                                                                        <div>
+                                                                            <font style="font-size: 12px;font-weight:900"><?= $row['rcd_cnee'] ?></font>
+                                                                        </div>
+                                                                        <div style="margin-top: -7px;">
+                                                                            <font style="font-size: 8px;font-weight:500;color:#9e9e9e">Consignee</font>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <!-- TOP -->
+                                                                    <div>
+                                                                        <div>
+                                                                            <font style="font-size: 12px;font-weight:900"><?= $row['rcd_eta'] ?></font>
+                                                                        </div>
+                                                                        <div style="margin-top: -7px;">
+                                                                            <font style="font-size: 8px;font-weight:500;color:#9e9e9e">ETA</font>
+                                                                        </div>
+                                                                    </div>
+                                                                    <!-- Buttom -->
+                                                                    <div style="margin-top: 10px;">
+                                                                        <div>
+                                                                            <font style="font-size: 12px;font-weight:900"><?= $row['rcd_ata'] ?></font>
+                                                                        </div>
+                                                                        <div style="margin-top: -7px;">
+                                                                            <font style="font-size: 8px;font-weight:500;color:#9e9e9e">ATA</font>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <!-- TOP -->
+                                                                    <div>
+                                                                        <div>
+                                                                            <font style="font-size: 12px;font-weight:900"><?= $row['rcd_mot'] ?></font>
+                                                                        </div>
+                                                                        <div style="margin-top: -7px;">
+                                                                            <font style="font-size: 8px;font-weight:500;color:#9e9e9e">MOT</font>
+                                                                        </div>
+                                                                    </div>
+                                                                    <!-- Buttom -->
+                                                                    <div style="margin-top: 10px;">
+                                                                        <div>
+                                                                            <font style="font-size: 12px;font-weight:900"><?= $row['rcd_coo'] ?></font>
+                                                                        </div>
+                                                                        <div style="margin-top: -7px;">
+                                                                            <font style="font-size: 8px;font-weight:500;color:#9e9e9e">COO</font>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <!-- TOP -->
+                                                                    <div>
+                                                                        <div>
+                                                                            <font style="font-size: 12px;font-weight:900"><?= $row['rcd_create_by'] ?></font>
+                                                                        </div>
+                                                                        <div style="margin-top: -7px;">
+                                                                            <font style="font-size: 8px;font-weight:500;color:#9e9e9e">Created By</font>
+                                                                        </div>
+                                                                    </div>
+                                                                    <!-- Buttom -->
+                                                                    <div style="margin-top: 10px;">
+                                                                        <div>
+                                                                            <font style="font-size: 12px;font-weight:900"><?= $row['rcd_create_date'] ?></font>
+                                                                        </div>
+                                                                        <div style="margin-top: -7px;">
+                                                                            <font style="font-size: 8px;font-weight:500;color:#9e9e9e">Created Date</font>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    <?php } ?>
+                                                <?php } else { ?>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="tb-no-data">
+                                                                <img src="assets/app/svg/no-data.svg" alt="No Data" width="20%">
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                <?php } ?>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
                             </div>
                             <!-- IF REF IMPORT TAB -->
                             <div class="ref-tab" style="margin-left: 0 !important;">
@@ -782,6 +891,9 @@ if (isset($_POST['findtwo'])) {
         <!-- UI -->
     </div>
 </div>
+<?php
+// include "include/pages/jsDataTables.php";
+?>
 <!-- Consignee -->
 <script type="text/javascript">
     // Input - Add

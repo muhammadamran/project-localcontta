@@ -651,3 +651,8 @@ li.show {
 	justify-content: space-between;
 	align-items: center;
 }
+
+.tb-no-data {
+    display: flex;
+    justify-content: center;
+}

@@ -16,6 +16,7 @@ if ($get_api[1] == 'api') {
     if (!empty($_SESSION['ROLE'])) {
 
         include "include/pages/head.php";
+        include "include/pages/cssDataTables.php";
         include "include/pages/top-header.php";
         include "include/pages/panel.php";
         include "include/pages/sidebar.php";
@@ -31,6 +32,7 @@ if ($get_api[1] == 'api') {
         }
 
         include "include/pages/footer.php";
+        include "include/pages/jsDataTables.php";
         include "include/alert.php";
     } else {
         include "login.php";
