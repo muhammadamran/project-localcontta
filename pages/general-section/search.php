@@ -161,22 +161,19 @@ if (isset($_POST['findtwo'])) {
         </div>
         <!-- END Search -->
         <!-- Result -->
-        <div class="row" style="display: <?= $resultreftn ?>;">
+        <div class="row" style="display: <?= $resultreftn ?>;margin-top: -20px;">
             <div class="col-lg-12">
                 <?php
                 $findInputTypeREFTN = $_POST['findInputTypeREFTN'];
                 if ($findInputTypeREFTN == "import") { ?>
                     <!-- IF REF IMPORT -->
                     <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <i class="fa fa-table"></i> Import List By REF/TN
-                        </div>
                         <div class="panel-body">
-                            <div class="p-b-20" style="margin-bottom: 15px;">
+                            <div class="p-b-10" style="margin-bottom: 15px;">
                                 <div class="alert-modify">
                                     <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
                                     <div>
-                                        <h3 style="margin-top: 0px;"><i class="fa fa-search"></i> Search Result!</h3>
+                                        <font style="font-size: 16px;font-weight: 600;">Search Result! [Import List By REF/TN]</font>
                                     </div>
                                     <hr>
                                     <p style="margin-bottom: 0px;">REF/TN: <b><?= $findInputREFTN ?></b></p>
@@ -256,7 +253,7 @@ if (isset($_POST['findtwo'])) {
                                 </table>
                             </div>
                             <!-- IF REF IMPORT TAB -->
-                            <div class="ref-tab">
+                            <div class="ref-tab" style="margin-left: 0 !important;">
                                 <font style="font-size: 18px;font-weight: 700;"><i class="fas fa-file-invoice"></i> Details Data</font>
                             </div>
                             <div class="tab">
@@ -276,7 +273,7 @@ if (isset($_POST['findtwo'])) {
                                                 INNER JOIN tb_imp_clear ON tb_master_impor.rcd_id = tb_imp_clear.rcd_id 
                                                 INNER JOIN tb_imp_post ON tb_master_impor.rcd_id = tb_imp_post.rcd_id           
                                                 WHERE tb_master_impor.rcd_ref = '$findInputREFTN'");
-                                $getsql = mysql_fetch_array($getsearch);
+                                $getsql = mysqli_fetch_array($getsearch);
                                 ?>
                                 <div class="table-responsive">
                                     <table class="table table-striped table-bordered table-hover">
@@ -373,7 +370,7 @@ if (isset($_POST['findtwo'])) {
                                                     INNER JOIN tb_truck_assign ON tb_master_impor.rcd_id = tb_truck_assign.rcd_id                
                                                     INNER JOIN tb_truck_job_details ON tb_master_impor.rcd_id = tb_truck_job_details.rcd_id  
                                                     WHERE tb_master_impor.rcd_ref = '$findInputREFTN'");
-                                    $getsql2 = mysql_fetch_array($getsearch2);
+                                    $getsql2 = mysqli_fetch_array($getsearch2);
                                     ?>
                                     <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
                                         <div class="card-body">
@@ -497,15 +494,12 @@ if (isset($_POST['findtwo'])) {
                 <?php } else if ($findInputTypeREFTN == "export") { ?>
                     <!-- IF REF EXPORT -->
                     <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <i class="fa fa-table"></i> Export List By Ref/TN
-                        </div>
                         <div class="panel-body">
                             <div class="p-b-20" style="margin-bottom: 15px;">
                                 <div class="alert-modify">
                                     <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
                                     <div>
-                                        <h3 style="margin-top: 0px;"><i class="fa fa-search"></i> Search Result!</h3>
+                                        <font style="font-size: 16px;font-weight: 600;">Search Result! [Export List By REF/TN]</font>
                                     </div>
                                     <hr>
                                     <p style="margin-bottom: 0px;">REF/TN: <b><?= $findInputREFTN ?></b></p>
@@ -594,7 +588,7 @@ if (isset($_POST['findtwo'])) {
         <!-- END BY REF/TN -->
 
         <!-- BY AJU -->
-        <div class="row" style="display: <?= $resultaju ?>;">
+        <div class="row" style="display: <?= $resultaju ?>;margin-top: -20px;">
             <div class="col-lg-12">
                 <?php
                 $findInputTypeAJU = $_POST['findInputTypeAJU'];
@@ -602,15 +596,12 @@ if (isset($_POST['findtwo'])) {
                 ?>
                     <!-- IF AJU IMPORT -->
                     <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <i class="fa fa-table"></i> Import List By AJU
-                        </div>
                         <div class="panel-body">
                             <div class="p-b-20" style="margin-bottom: 15px;">
                                 <div class="alert-modify">
                                     <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
                                     <div>
-                                        <h3 style="margin-top: 0px;"><i class="fa fa-search"></i> Search Result!</h3>
+                                        <font style="font-size: 16px;font-weight: 600;">Search Result! [Import List By No. Pengajuan]</font>
                                     </div>
                                     <hr>
                                     <p style="margin-bottom: 0px;">AJU: <b><?= $findInputAJU ?></b></p>
@@ -695,15 +686,12 @@ if (isset($_POST['findtwo'])) {
                 <?php } else if ($findInputTypeAJU == "export") { ?>
                     <!-- IF AJU EXPORT -->
                     <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <i class="fa fa-table"></i> Export List By AJU
-                        </div>
                         <div class="panel-body">
                             <div class="p-b-20" style="margin-bottom: 15px;">
                                 <div class="alert-modify">
                                     <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
                                     <div>
-                                        <h3 style="margin-top: 0px;"><i class="fa fa-search"></i> Search Result!</h3>
+                                        <font style="font-size: 16px;font-weight: 600;">Search Result! [Export List By No. Pengajuan]</font>
                                     </div>
                                     <hr>
                                     <p style="margin-bottom: 0px;">AJU: <b><?= $findInputAJU ?></b></p>
