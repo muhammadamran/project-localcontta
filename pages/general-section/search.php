@@ -172,7 +172,7 @@ if (isset($_POST['findtwo'])) {
                     <!-- IF REF IMPORT -->
                     <div class="panel panel-default">
                         <div class="panel-body">
-                            <div class="card-box mb-30">
+                            <div class="card-box mb-10">
                                 <div class="pd-20">
                                     <h4 class="text-blue h4">Search Result! [Import List By REF/TN]</h4>
                                     <hr>
