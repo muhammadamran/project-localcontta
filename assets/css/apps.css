@@ -507,10 +507,10 @@ li.show {
 }
 /*End Icon Show Password*/
 
-.card {
+.card-apps {
 	box-shadow: 0 20px 27px 0 rgb(0 0 0 / 5%);
 }
-.card {
+.card-apps {
 	position: relative;
 	display: flex;
 	flex-direction: column;
@@ -524,7 +524,7 @@ li.show {
 	box-shadow: 0 20px 27px 0 rgb(0 0 0 / 5%);
 	margin-bottom: 10px;
 }
-.card .card-body {
+.card-apps .card-body {
 	padding: 40px;
 	margin-top: -25px;
 	margin-bottom: -25px;

@@ -44,7 +44,7 @@ $cont_import_air = mysqli_fetch_array($result_import_air);
         <div class="row">
             <div class="col-md-6 mb-30" style="padding-right: 0px;padding-left: 0px;">
                 <div class="col-md-12">
-                    <div class="card" style="padding: 30px 20px 30px 20px;">
+                    <div class="card-apps" style="padding: 30px 20px 30px 20px;">
                         <div class="card-body p-3">
                             <div class="card-content">
                                 <div style="display: grid;">
@@ -119,7 +119,7 @@ $cont_import_air = mysqli_fetch_array($result_import_air);
         <div class="row">
             <div class="col-md-6 mb-30" style="padding-right: 0px;padding-left: 0px;">
                 <div class="col-md-12">
-                    <div class="card" style="padding: 30px 20px 30px 20px;">
+                    <div class="card-apps" style="padding: 30px 20px 30px 20px;">
                         <div class="card-body p-3">
                             <div class="card-content">
                                 <div style="display: grid;">

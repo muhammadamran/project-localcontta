@@ -52,6 +52,38 @@ if (isset($_GET['findtwo'])) {
     <!-- End Page Title -->
     <div class="xs-pd-20-10 pd-ltr-20">
         <!-- UI -->
+        <div class="row">
+            <!-- End REF/TN -->
+            <div class="col-md-6 mb-30">
+                <div class="card card-box">
+                    <div class="card-header">
+                        Quote
+                    </div>
+                    <div class="card-body">
+                        <blockquote class="blockquote mb-0">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                            <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+            <!-- End REF/TN -->
+            <!-- End No. Pengajuan (AJU) -->
+            <div class="col-md-6 mb-30">
+                <div class="card card-box">
+                    <div class="card-header">
+                        Quote
+                    </div>
+                    <div class="card-body">
+                        <blockquote class="blockquote mb-0">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                            <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+            <!-- End No. Pengajuan (AJU) -->
+        </div>
         <!-- Search -->
         <div class="row">
             <div class="col-lg-6">
