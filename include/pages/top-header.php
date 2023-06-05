@@ -36,7 +36,7 @@
                         <ul>
                             <li>
                                 <div>
-                                    <img src="assets/app/svg/no-data.svg" alt="">
+                                    <img src="assets/app/svg/no-data.svg" alt="No Data">
                                 </div>
                             </li>
                         </ul>
