@@ -681,7 +681,7 @@ if (isset($_POST['findtwo'])) {
                                                                                             <font style="font-size: 16px;font-weight:900"><?= $rowCustoms['rcd_rcvd_do'] != NULL ? $rowCustoms['rcd_rcvd_do'] : '<font style="color:red">No Data</font>' ?></font>
                                                                                         </div>
                                                                                         <div style="margin-top: -7px;">
-                                                                                            <font style="font-size: 10px;font-weight:500;color:#9e9e9e">RCVD DO</font>
+                                                                                            <font style="font-size: 10px;font-weight:500;color:#9e9e9e">RECIEVED DO</font>
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
@@ -718,17 +718,308 @@ if (isset($_POST['findtwo'])) {
                                         </div>
                                         <div class="tab-pane fade" id="TruckingDetails-REF-TN" role="tabpanel">
                                             <div class="pd-20">
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                                <!-- Trucking Details -->
+                                                <div class="table-responsive">
+                                                    <table id="FINDreftnImport" class="table table-bordered table-td-valign-middle">
+                                                        <tbody>
+                                                            <?php
+                                                            $resultTrucking = $db->query("SELECT * FROM tb_master_impor 
+                                                                                        INNER JOIN tb_truck_assign ON tb_master_impor.rcd_id = tb_truck_assign.rcd_id                
+                                                                                        INNER JOIN tb_truck_job_details ON tb_master_impor.rcd_id = tb_truck_job_details.rcd_id  
+                                                                                        WHERE tb_master_impor.rcd_ref = '$findInputREFTN'");
+                                                            if (mysqli_num_rows($resultTrucking) > 0) {
+                                                                $no = 0;
+                                                                while ($rowTrucking = $resultTrucking->fetch_assoc()) {
+                                                                    $no++;
+                                                            ?>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div>
+                                                                                <!-- TOP -->
+                                                                                <div>
+                                                                                    <div>
+                                                                                        <font style="font-size: 16px;font-weight:900"><?= $rowTrucking['assign_vendor'] != NULL ? $rowTrucking['assign_vendor'] : '<font style="color:red">No Data</font>' ?></font>
+                                                                                    </div>
+                                                                                    <div style="margin-top: -7px;">
+                                                                                        <font style="font-size: 10px;font-weight:500;color:#9e9e9e">Vendor Name</font>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <!-- Buttom -->
+                                                                                <div style="margin-top: 10px;">
+                                                                                    <div>
+                                                                                        <font style="font-size: 16px;font-weight:900"><?= $rowTrucking['order_rcvd_date'] != NULL ? $rowTrucking['order_rcvd_date'] : '<font style="color:red">No Data</font>' ?></font>
+                                                                                    </div>
+                                                                                    <div style="margin-top: -7px;">
+                                                                                        <font style="font-size: 10px;font-weight:500;color:#9e9e9e">Order Sent</font>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div>
+                                                                                <!-- TOP -->
+                                                                                <div>
+                                                                                    <div>
+                                                                                        <font style="font-size: 16px;font-weight:900"><?= $rowTrucking['order_rcvd_date'] != NULL ? $rowTrucking['order_rcvd_date'] : '<font style="color:red">No Data</font>' ?></font>
+                                                                                    </div>
+                                                                                    <div style="margin-top: -7px;">
+                                                                                        <font style="font-size: 10px;font-weight:500;color:#9e9e9e">Recieved Order From <?= $_SESSION['COMPANY_NAME']; ?></font>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <!-- Buttom -->
+                                                                                <div style="margin-top: 10px;">
+                                                                                    <div>
+                                                                                        <font style="font-size: 16px;font-weight:900"><?= $rowTrucking['order_rcvd_by'] != NULL ? $rowTrucking['order_rcvd_by'] : '<font style="color:red">No Data</font>' ?></font>
+                                                                                    </div>
+                                                                                    <div style="margin-top: -7px;">
+                                                                                        <font style="font-size: 10px;font-weight:500;color:#9e9e9e">Recieved By</font>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div>
+                                                                                <!-- TOP -->
+                                                                                <div>
+                                                                                    <div>
+                                                                                        <font style="font-size: 16px;font-weight:900"><?= $rowTrucking['tract_driver_name'] != NULL ? $rowTrucking['tract_driver_name'] : '<font style="color:red">No Data</font>' ?></font>
+                                                                                    </div>
+                                                                                    <div style="margin-top: -7px;">
+                                                                                        <font style="font-size: 10px;font-weight:500;color:#9e9e9e">Driver Name</font>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <!-- Buttom -->
+                                                                                <div style="margin-top: 10px;">
+                                                                                    <div>
+                                                                                        <font style="font-size: 16px;font-weight:900"><?= $rowTrucking['tract_driver_phone'] != NULL ? $rowTrucking['tract_driver_phone'] : '<font style="color:red">No Data</font>' ?></font>
+                                                                                    </div>
+                                                                                    <div style="margin-top: -7px;">
+                                                                                        <font style="font-size: 10px;font-weight:500;color:#9e9e9e">Driver Phone Number</font>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div>
+                                                                                <!-- TOP -->
+                                                                                <div>
+                                                                                    <div>
+                                                                                        <font style="font-size: 16px;font-weight:900"><?= $rowTrucking['tract_vehicle_no'] != NULL ? $rowTrucking['tract_vehicle_no'] : '<font style="color:red">No Data</font>' ?></font>
+                                                                                    </div>
+                                                                                    <div style="margin-top: -7px;">
+                                                                                        <font style="font-size: 10px;font-weight:500;color:#9e9e9e">Vehicle No.</font>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <!-- Buttom -->
+                                                                                <div style="margin-top: 10px;">
+                                                                                    <div>
+                                                                                        <font style="font-size: 16px;font-weight:900"><?= $rowTrucking['tract_cont_no'] != NULL ? $rowTrucking['tract_cont_no'] : '<font style="color:red">No Data</font>' ?></font>
+                                                                                    </div>
+                                                                                    <div style="margin-top: -7px;">
+                                                                                        <font style="font-size: 10px;font-weight:500;color:#9e9e9e">Container No.</font>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                <?php } ?>
+                                                            <?php } else { ?>
+                                                                <tr>
+                                                                    <td>
+                                                                        <div class="tb-no-data">
+                                                                            <img src="assets/app/svg/no-data.svg" alt="No Data" width="20%">
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                            <?php } ?>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <!-- End Trucking Details -->
                                             </div>
                                         </div>
                                         <div class="tab-pane fade" id="DeliveryDetails-REF-TN" role="tabpanel">
                                             <div class="pd-20">
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                                <!-- Delivery Details -->
+                                                <div class="table-responsive">
+                                                    <table id="FINDreftnImport" class="table table-bordered table-td-valign-middle">
+                                                        <tbody>
+                                                            <?php
+                                                            $resultDelivery = $db->query("SELECT * FROM tb_master_impor 
+                                                                                        INNER JOIN tb_truck_assign ON tb_master_impor.rcd_id = tb_truck_assign.rcd_id                
+                                                                                        INNER JOIN tb_truck_job_details ON tb_master_impor.rcd_id = tb_truck_job_details.rcd_id  
+                                                                                        WHERE tb_master_impor.rcd_ref = '$findInputREFTN'");
+                                                            if (mysqli_num_rows($resultDelivery) > 0) {
+                                                                $no = 0;
+                                                                while ($rowDelivery = $resultDelivery->fetch_assoc()) {
+                                                                    $no++;
+                                                            ?>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div>
+                                                                                <!-- TOP -->
+                                                                                <div>
+                                                                                    <div>
+                                                                                        <font style="font-size: 16px;font-weight:900"><?= $rowDelivery['tract_start'] != NULL ? $rowDelivery['tract_start'] : '<font style="color:red">No Data</font>' ?></font>
+                                                                                    </div>
+                                                                                    <div style="margin-top: -7px;">
+                                                                                        <font style="font-size: 10px;font-weight:500;color:#9e9e9e">Truck GO</font>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <!-- Buttom -->
+                                                                                <div style="margin-top: 10px;">
+                                                                                    <div>
+                                                                                        <font style="font-size: 16px;font-weight:900"><?= $rowDelivery['tract_arr_in_wh'] != NULL ? $rowDelivery['tract_arr_in_wh'] : '<font style="color:red">No Data</font>' ?></font>
+                                                                                    </div>
+                                                                                    <div style="margin-top: -7px;">
+                                                                                        <font style="font-size: 10px;font-weight:500;color:#9e9e9e">Arrive in Warehouse</font>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div>
+                                                                                <!-- TOP -->
+                                                                                <div>
+                                                                                    <div>
+                                                                                        <font style="font-size: 16px;font-weight:900"><?= $rowDelivery['tract_start_stuff'] != NULL ? $rowDelivery['tract_start_stuff'] : '<font style="color:red">No Data</font>' ?></font>
+                                                                                    </div>
+                                                                                    <div style="margin-top: -7px;">
+                                                                                        <font style="font-size: 10px;font-weight:500;color:#9e9e9e">Start Stuff</font>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <!-- Buttom -->
+                                                                                <div style="margin-top: 10px;">
+                                                                                    <div>
+                                                                                        <font style="font-size: 16px;font-weight:900"><?= $rowDelivery['tract_end_stuff'] != NULL ? $rowDelivery['tract_end_stuff'] : '<font style="color:red">No Data</font>' ?></font>
+                                                                                    </div>
+                                                                                    <div style="margin-top: -7px;">
+                                                                                        <font style="font-size: 10px;font-weight:500;color:#9e9e9e">Complete Stuff</font>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div>
+                                                                                <!-- TOP -->
+                                                                                <div>
+                                                                                    <div>
+                                                                                        <font style="font-size: 16px;font-weight:900"><?= $rowDelivery['tract_leave_wh'] != NULL ? $rowDelivery['tract_leave_wh'] : '<font style="color:red">No Data</font>' ?></font>
+                                                                                    </div>
+                                                                                    <div style="margin-top: -7px;">
+                                                                                        <font style="font-size: 10px;font-weight:500;color:#9e9e9e">Leave the Warehouse</font>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <!-- Buttom -->
+                                                                                <div style="margin-top: 10px;">
+                                                                                    <div>
+                                                                                        <font style="font-size: 16px;font-weight:900"><?= $rowDelivery['tract_arr_in_dest'] != NULL ? $rowDelivery['tract_arr_in_dest'] : '<font style="color:red">No Data</font>' ?></font>
+                                                                                    </div>
+                                                                                    <div style="margin-top: -7px;">
+                                                                                        <font style="font-size: 10px;font-weight:500;color:#9e9e9e">Arrive in Destination</font>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                <?php } ?>
+                                                            <?php } else { ?>
+                                                                <tr>
+                                                                    <td>
+                                                                        <div class="tb-no-data">
+                                                                            <img src="assets/app/svg/no-data.svg" alt="No Data" width="20%">
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                            <?php } ?>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <!-- End Delivery Details -->
                                             </div>
                                         </div>
                                         <div class="tab-pane fade" id="EFileDetails-REF-TN" role="tabpanel">
                                             <div class="pd-20">
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+                                                <!-- Package Details -->
+                                                <div class="table-responsive">
+                                                    <table id="FINDreftnImport" class="table table-bordered table-td-valign-middle">
+                                                        <tbody>
+                                                            <?php
+                                                            $resultEfile = $db->query("SELECT * FROM tb_master_impor 
+                                                                                INNER JOIN tb_imp_pre ON tb_master_impor.rcd_id = tb_imp_pre.rcd_id  
+                                                                                INNER JOIN tb_imp_clear ON tb_master_impor.rcd_id = tb_imp_clear.rcd_id 
+                                                                                INNER JOIN tb_imp_post ON tb_master_impor.rcd_id = tb_imp_post.rcd_id           
+                                                                                WHERE tb_master_impor.rcd_ref = '$findInputREFTN'");
+                                                            if (mysqli_num_rows($resultEfile) > 0) {
+                                                                $no = 0;
+                                                                while ($rowEfile = $resultEfile->fetch_assoc()) {
+                                                                    $no++;
+                                                            ?>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div>
+                                                                                <div>
+                                                                                    <div>
+                                                                                        <a href="<?= $rowEfile['pib_file']; ?>" class="btn btn-outline-danger" target="_blank">PDF</a>
+                                                                                    </div>
+                                                                                    <div style="margin-top: 0px;">
+                                                                                        <font style="font-size: 14px;font-weight:500;color:#9e9e9e">PIB</font>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div>
+                                                                                <div>
+                                                                                    <div>
+                                                                                        <a href="<?= $rowEfile['sppb']; ?>" class="btn btn-outline-danger" target="_blank">PDF</a>
+                                                                                    </div>
+                                                                                    <div style="margin-top: 0px;">
+                                                                                        <font style="font-size: 14px;font-weight:500;color:#9e9e9e">SPPB</font>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div>
+                                                                                <div>
+                                                                                    <div>
+                                                                                        <a href="<?= $rowEfile['cipl_file']; ?>" class="btn btn-outline-danger" target="_blank">PDF</a>
+                                                                                    </div>
+                                                                                    <div style="margin-top: 0px;">
+                                                                                        <font style="font-size: 14px;font-weight:500;color:#9e9e9e">PIB</font>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div>
+                                                                                <div>
+                                                                                    <div>
+                                                                                        <a href="<?= $rowEfile['aaa']; ?>" class="btn btn-outline-danger" target="_blank">PDF</a>
+                                                                                    </div>
+                                                                                    <div style="margin-top: 0px;">
+                                                                                        <font style="font-size: 14px;font-weight:500;color:#9e9e9e">COO</font>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                <?php } ?>
+                                                            <?php } else { ?>
+                                                                <tr>
+                                                                    <td>
+                                                                        <div class="tb-no-data">
+                                                                            <img src="assets/app/svg/no-data.svg" alt="No Data" width="20%">
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                            <?php } ?>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <!-- End Package Details -->
                                             </div>
                                         </div>
                                     </div>
