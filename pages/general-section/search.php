@@ -405,17 +405,315 @@ if (isset($_POST['findtwo'])) {
                                     <div class="tab-content">
                                         <div class="tab-pane fade show active" id="PackageDetails-REF-TN" role="tabpanel">
                                             <div class="pd-20">
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                                <!-- Package Details -->
+                                                <div class="table-responsive">
+                                                    <table id="FINDreftnImport" class="table table-bordered table-td-valign-middle">
+                                                        <tbody>
+                                                            <?php
+                                                            $resultPD = $db->query("SELECT * FROM tb_master_impor 
+                                                                                INNER JOIN tb_imp_pre ON tb_master_impor.rcd_id = tb_imp_pre.rcd_id  
+                                                                                INNER JOIN tb_imp_clear ON tb_master_impor.rcd_id = tb_imp_clear.rcd_id 
+                                                                                INNER JOIN tb_imp_post ON tb_master_impor.rcd_id = tb_imp_post.rcd_id           
+                                                                                WHERE tb_master_impor.rcd_ref = '$findInputREFTN'");
+                                                            if (mysqli_num_rows($resultPD) > 0) {
+                                                                $no = 0;
+                                                                while ($rowPD = $resultPD->fetch_assoc()) {
+                                                                    $no++;
+                                                            ?>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div>
+                                                                                <!-- TOP -->
+                                                                                <div>
+                                                                                    <div>
+                                                                                        <font style="font-size: 16px;font-weight:900"><?= $rowPD['rcd_20_type'] != NULL && $rowPD['rcd_20_type'] != '.' && $rowPD['rcd_20_type'] != '-' ? $rowPD['rcd_20_type'] : '<font style="color:red">No Data</font>' ?></font>
+                                                                                    </div>
+                                                                                    <div style="margin-top: -7px;">
+                                                                                        <font style="font-size: 10px;font-weight:500;color:#9e9e9e">20 TEU</font>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <!-- Buttom -->
+                                                                                <div style="margin-top: 10px;">
+                                                                                    <div>
+                                                                                        <font style="font-size: 16px;font-weight:900"><?= $rowPD['rcd_40_type'] != NULL && $rowPD['rcd_40_type'] != '.' ? $rowPD['rcd_40_type'] : '<font style="color:red">No Data</font>' ?></font>
+                                                                                    </div>
+                                                                                    <div style="margin-top: -7px;">
+                                                                                        <font style="font-size: 10px;font-weight:500;color:#9e9e9e">40 TEU</font>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div>
+                                                                                <!-- TOP -->
+                                                                                <div>
+                                                                                    <div>
+                                                                                        <font style="font-size: 16px;font-weight:900"><?= $rowPD['rcd_party'] != NULL ? $rowPD['rcd_party'] : '<font style="color:red">No Data</font>' ?></font>
+                                                                                    </div>
+                                                                                    <div style="margin-top: -7px;">
+                                                                                        <font style="font-size: 10px;font-weight:500;color:#9e9e9e">Party</font>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <!-- Buttom -->
+                                                                                <div style="margin-top: 10px;">
+                                                                                    <div>
+                                                                                        <font style="font-size: 16px;font-weight:900"><?= $rowPD['rcd_weight'] != NULL ? number_format($rowPD['rcd_weight'], 0, ',', ',') : '<font style="color:red">No Data</font>' ?></font>
+                                                                                    </div>
+                                                                                    <div style="margin-top: -7px;">
+                                                                                        <font style="font-size: 10px;font-weight:500;color:#9e9e9e">Weight</font>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div>
+                                                                                <!-- TOP -->
+                                                                                <div>
+                                                                                    <div>
+                                                                                        <font style="font-size: 16px;font-weight:900"><?= $rowPD['rcd_package'] ?></font>
+                                                                                    </div>
+                                                                                    <div style="margin-top: -7px;">
+                                                                                        <font style="font-size: 10px;font-weight:500;color:#9e9e9e">Package</font>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <!-- Buttom -->
+                                                                                <div style="margin-top: 10px;">
+                                                                                    <div>
+                                                                                        <font style="font-size: 16px;font-weight:900"><?= $rowPD['rcd_cbm'] ?></font>
+                                                                                    </div>
+                                                                                    <div style="margin-top: -7px;">
+                                                                                        <font style="font-size: 10px;font-weight:500;color:#9e9e9e">CBM</font>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                <?php } ?>
+                                                            <?php } else { ?>
+                                                                <tr>
+                                                                    <td>
+                                                                        <div class="tb-no-data">
+                                                                            <img src="assets/app/svg/no-data.svg" alt="No Data" width="20%">
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                            <?php } ?>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <!-- End Package Details -->
                                             </div>
                                         </div>
                                         <div class="tab-pane fade" id="PIBDetails-REF-TN" role="tabpanel">
                                             <div class="pd-20">
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                                <!-- PIB Details -->
+                                                <div class="table-responsive">
+                                                    <table id="FINDreftnImport" class="table table-bordered table-td-valign-middle">
+                                                        <tbody>
+                                                            <?php
+                                                            $resultPIB = $db->query("SELECT * FROM tb_master_impor 
+                                                                                INNER JOIN tb_imp_pre ON tb_master_impor.rcd_id = tb_imp_pre.rcd_id  
+                                                                                INNER JOIN tb_imp_clear ON tb_master_impor.rcd_id = tb_imp_clear.rcd_id 
+                                                                                INNER JOIN tb_imp_post ON tb_master_impor.rcd_id = tb_imp_post.rcd_id           
+                                                                                WHERE tb_master_impor.rcd_ref = '$findInputREFTN'");
+                                                            if (mysqli_num_rows($resultPIB) > 0) {
+                                                                $no = 0;
+                                                                while ($rowPIB = $resultPIB->fetch_assoc()) {
+                                                                    $no++;
+                                                            ?>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div>
+                                                                                <!-- TOP -->
+                                                                                <div>
+                                                                                    <div>
+                                                                                        <font style="font-size: 16px;font-weight:900"><?= $rowPIB['pre_send_pib_draft'] != NULL ? $rowPIB['pre_send_pib_draft'] : '<font style="color:red">No Data</font>' ?></font>
+                                                                                    </div>
+                                                                                    <div style="margin-top: -7px;">
+                                                                                        <font style="font-size: 10px;font-weight:500;color:#9e9e9e">Send PIB Draft</font>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <!-- Buttom -->
+                                                                                <div style="margin-top: 10px;">
+                                                                                    <div>
+                                                                                        <font style="font-size: 16px;font-weight:900"><?= $rowPIB['pre_rcvd_pib_rev'] != NULL ? $rowPIB['pre_rcvd_pib_rev'] : '<font style="color:red">No Data</font>' ?></font>
+                                                                                    </div>
+                                                                                    <div style="margin-top: -7px;">
+                                                                                        <font style="font-size: 10px;font-weight:500;color:#9e9e9e">Recieve PIB Revision</font>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div>
+                                                                                <!-- TOP -->
+                                                                                <div>
+                                                                                    <div>
+                                                                                        <font style="font-size: 16px;font-weight:900"><?= $rowPIB['pre_send_pib'] != NULL ? $rowPIB['pre_send_pib'] : '<font style="color:red">No Data</font>' ?></font>
+                                                                                    </div>
+                                                                                    <div style="margin-top: -7px;">
+                                                                                        <font style="font-size: 10px;font-weight:500;color:#9e9e9e">Send PIB Revision</font>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <!-- Buttom -->
+                                                                                <div style="margin-top: 10px;">
+                                                                                    <div>
+                                                                                        <font style="font-size: 16px;font-weight:900"><?= $rowPIB['pre_rcvd_complete'] != NULL ? $rowPIB['pre_rcvd_complete'] : '<font style="color:red">No Data</font>' ?></font>
+                                                                                    </div>
+                                                                                    <div style="margin-top: -7px;">
+                                                                                        <font style="font-size: 10px;font-weight:500;color:#9e9e9e">Recieve Document Completed</font>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div>
+                                                                                <!-- TOP -->
+                                                                                <div>
+                                                                                    <div>
+                                                                                        <font style="font-size: 16px;font-weight:900"><?= $rowPIB['pre_create_pib'] != NULL ? $rowPIB['pre_create_pib'] : '<font style="color:red">No Data</font>' ?></font>
+                                                                                    </div>
+                                                                                    <div style="margin-top: -7px;">
+                                                                                        <font style="font-size: 10px;font-weight:500;color:#9e9e9e">PIB Confirmation</font>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <!-- Buttom -->
+                                                                                <div style="margin-top: 10px;">
+                                                                                    <div>
+                                                                                        <font style="font-size: 16px;font-weight:900"><?= $rowPIB['cle_trf_pib'] != NULL ? $rowPIB['cle_trf_pib'] : '<font style="color:red">No Data</font>' ?></font>
+                                                                                    </div>
+                                                                                    <div style="margin-top: -7px;">
+                                                                                        <font style="font-size: 10px;font-weight:500;color:#9e9e9e">PIB Transmit</font>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                <?php } ?>
+                                                            <?php } else { ?>
+                                                                <tr>
+                                                                    <td>
+                                                                        <div class="tb-no-data">
+                                                                            <img src="assets/app/svg/no-data.svg" alt="No Data" width="20%">
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                            <?php } ?>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <!-- End PIB Details -->
                                             </div>
                                         </div>
                                         <div class="tab-pane fade" id="CustomsDetails-REF-TN" role="tabpanel">
                                             <div class="pd-20">
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                                <!-- Customs Details -->
+                                                <div class="table-responsive">
+                                                    <table id="FINDreftnImport" class="table table-bordered table-td-valign-middle">
+                                                        <tbody>
+                                                            <?php
+                                                            $resultCustoms = $db->query("SELECT * FROM tb_master_impor 
+                                                                                INNER JOIN tb_imp_pre ON tb_master_impor.rcd_id = tb_imp_pre.rcd_id  
+                                                                                INNER JOIN tb_imp_clear ON tb_master_impor.rcd_id = tb_imp_clear.rcd_id 
+                                                                                INNER JOIN tb_imp_post ON tb_master_impor.rcd_id = tb_imp_post.rcd_id           
+                                                                                WHERE tb_master_impor.rcd_ref = '$findInputREFTN'");
+                                                            if (mysqli_num_rows($resultCustoms) > 0) {
+                                                                $no = 0;
+                                                                while ($rowCustoms = $resultCustoms->fetch_assoc()) {
+                                                                    $no++;
+                                                            ?>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div>
+                                                                                <!-- TOP -->
+                                                                                <div>
+                                                                                    <div>
+                                                                                        <font style="font-size: 16px;font-weight:900"><?= $rowCustoms['cle_paid_duty_tax'] != NULL ? $rowCustoms['cle_paid_duty_tax'] : '<font style="color:red">No Data</font>' ?></font>
+                                                                                    </div>
+                                                                                    <div style="margin-top: -7px;">
+                                                                                        <font style="font-size: 10px;font-weight:500;color:#9e9e9e">PAID DUTY TAX</font>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <!-- Buttom -->
+                                                                                <div style="display: flex;justify-content: space-between;align-items: center;margin-top: 10px;">
+                                                                                    <div>
+                                                                                        <div>
+                                                                                            <font style="font-size: 16px;font-weight:900"><?= $rowCustoms['cle_spjk'] != NULL ? $rowCustoms['cle_spjk'] : '<font style="color:red">No Data</font>' ?></font>
+                                                                                        </div>
+                                                                                        <div style="margin-top: -7px;">
+                                                                                            <font style="font-size: 10px;font-weight:500;color:#9e9e9e">SPJK</font>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div>
+                                                                                        <div>
+                                                                                            <font style="font-size: 16px;font-weight:900"><?= $rowCustoms['cle_spjm'] != NULL ? $rowCustoms['cle_spjm'] : '<font style="color:red">No Data</font>' ?></font>
+                                                                                        </div>
+                                                                                        <div style="margin-top: -7px;">
+                                                                                            <font style="font-size: 10px;font-weight:500;color:#9e9e9e">SPJM</font>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div>
+                                                                                <!-- TOP -->
+                                                                                <div>
+                                                                                    <div>
+                                                                                        <font style="font-size: 16px;font-weight:900"><?= $rowCustoms['cle_sppb'] != NULL ? $rowCustoms['cle_sppb'] : '<font style="color:red">No Data</font>' ?></font>
+                                                                                    </div>
+                                                                                    <div style="margin-top: -7px;">
+                                                                                        <font style="font-size: 10px;font-weight:500;color:#9e9e9e">SPPB</font>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <!-- Buttom -->
+                                                                                <div style="display: flex;justify-content: space-between;align-items: center;margin-top: 10px;">
+                                                                                    <div>
+                                                                                        <div>
+                                                                                            <font style="font-size: 16px;font-weight:900"><?= $rowCustoms['cle_submit_coo'] != NULL ? $rowCustoms['cle_submit_coo'] : '<font style="color:red">No Data</font>' ?></font>
+                                                                                        </div>
+                                                                                        <div style="margin-top: -7px;">
+                                                                                            <font style="font-size: 10px;font-weight:500;color:#9e9e9e">SUBMIT COO</font>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div>
+                                                                                        <div>
+                                                                                            <font style="font-size: 16px;font-weight:900"><?= $rowCustoms['rcd_rcvd_do'] != NULL ? $rowCustoms['rcd_rcvd_do'] : '<font style="color:red">No Data</font>' ?></font>
+                                                                                        </div>
+                                                                                        <div style="margin-top: -7px;">
+                                                                                            <font style="font-size: 10px;font-weight:500;color:#9e9e9e">RCVD DO</font>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div>
+                                                                                <div style="margin-top: 10px;">
+                                                                                    <div>
+                                                                                        <font style="font-size: 16px;font-weight:900"><?= $rowCustoms['rcd_do_validation'] != NULL ? $rowCustoms['rcd_do_validation'] : '<font style="color:red">No Data</font>' ?></font>
+                                                                                    </div>
+                                                                                    <div style="margin-top: -7px;">
+                                                                                        <font style="font-size: 10px;font-weight:500;color:#9e9e9e">DO VALIDATION</font>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                <?php } ?>
+                                                            <?php } else { ?>
+                                                                <tr>
+                                                                    <td>
+                                                                        <div class="tb-no-data">
+                                                                            <img src="assets/app/svg/no-data.svg" alt="No Data" width="20%">
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                            <?php } ?>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <!-- End Customs Details -->
                                             </div>
                                         </div>
                                         <div class="tab-pane fade" id="TruckingDetails-REF-TN" role="tabpanel">
