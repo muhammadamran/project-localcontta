@@ -24,6 +24,11 @@
             <i class="icon-copy dw dw-wall-clock1" style="font-size: 20px;"></i>
             <div style="margin-left: 5px;font-size: 14px;" id="ct"></div>
         </div>
+        <!-- Branches -->
+        <div class="dashboard-setting user-notification" style="margin-top: -10px;display: flex;align-items: center;">
+            <i class="icon-copy dw dw-pin" style="font-size: 22px;"></i>
+            <div style="margin-left: 5px;font-size: 14px;">Branches: <?= $_SESSION['BRANCHES']; ?></div>
+        </div>
         <!-- End Clock -->
         <div class="user-notification">
             <div class="dropdown">
